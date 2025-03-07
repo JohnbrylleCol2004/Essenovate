@@ -45,11 +45,12 @@
     padding: 10px 20px;
     background: #663406;
     color: white;
-    border: none;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
-    margin: 20px;
+    margin: 20px auto;
+    width: 50;
+    display: block;
 }
 
 .order-form button:hover {
@@ -64,7 +65,6 @@ pop up */
     overflow-y: auto; 
 }
 
-
 .modal {
     display: none;
     position: fixed;
@@ -75,6 +75,12 @@ pop up */
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
 }
+
+.modal-header {
+    float: inline-end;
+
+}
+
 .modal-content {
     background-color: white;
     padding: 20px;
@@ -171,15 +177,17 @@ button {
 
 /*style of X button*/
 .custom-close {
+    position:static;
+    margin-top: -20px;
     background: none;
-    margin-left: 200px;
+    border: none;
     font-size: 1.5rem;
     color: black;
     cursor: pointer;
 }
 
 .custom-close:hover {
-    color: red;
+    color: #4A2C17;
 }
 
 
