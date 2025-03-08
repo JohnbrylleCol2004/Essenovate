@@ -32,33 +32,37 @@ $(document).ready(function () {
         $("#" + $(this).data("category")).addClass("active");
     });
 
+    $("#signupModal").hide();
+
     $("#orderForm").on("submit", function (event) {
         event.preventDefault();
-        $("#signupModal").fadeIn();
+        $("#signupModal").fadeIn(); 
     });
 
-    $(".btn-close").on("click", function () {
+    $(".custom-close").on("click", function () {
         $("#signupModal").fadeOut();
     });
 
     $("#confirmOrder").on("click", function () {
         const email = $.trim($("#email").val());
         const password = $.trim($("#password").val());
-        const homeAddress = $.trim($("#homeAddress").val())
+        const homeAddress = $.trim($("#homeAddress").val());
 
-        if (email === "" || password === ""||homeAddress === "") {
-            alert("Please enter your email and password to proceed.");
+        if (email === "" || password === "" || homeAddress === "") {
+            alert("Please enter your email, password, and address to proceed.");
             return;
         }
 
         alert(`Order confirmed!\nTotal: ${$("#totalPrice").text()}\nEmail: ${email}\nAddress: ${homeAddress}`);
-        $("#signupModal").fadeOut();
-    });
-});
 
-$(document).ready(function () {
-    $(".custom-close").on("click", function () {
-        $("#signupModal").fadeOut(); // Hide the modal
+      
+        $("#signupModal").fadeOut();
+
+        
+        $(".quantity").val(""); 
+        $("#email, #password, #homeAddress").val(""); 
+        $("#totalPrice, #servicecharge, #deliveryfee").text("₱0.00"); 
+        $(".subtotal").text("₱0"); 
     });
 });
 
