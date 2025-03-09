@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vitality Tea | Contact Page</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="headerbar">
+                <div class="account">
+                    <ul>
+                        <a href="#">
+                            <li>
+                                <i class="fa-solid fa-house-chimney"></i>
+                            </li>
+                        </a>
+                        <a href="#" id="searchicon1">
+                            <li>
+                                <i class="fa-solid fa-magnifying-glass searchicon"></i>
+                            </li>
+                        </a>
+                        <div class="search" id="searchinput1">
+                            <input type="search" placeholder="Search...">
+                            <i class="fa-solid fa-magnifying-glass srchicon"></i>
+                        </div>
+                        <a href="">
+                            <li>
+                                <i class="fa-solid fa-user" id="user-mb"></i>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <a href="">
+                            <li>Home</li>
+                        </a>
+                        <a href="">
+                            <li>Service</li>
+                        </a>
+                        <a href="Menu.html">
+                            <li>Menu</li>
+                        </a>
+                        <a href="">
+                            <li>Order</li>
+                        </a>
+                        <a href="">
+                            <li>About</li>
+                        </a>
+                        <a href="">
+                            <li>Contact</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="logo">
+                <img src="./image/new_logo.png" alt="logo" >
+                
+            </div>
+
+            <div class="bar">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark" id="hdcross"></i>
+            </div>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="account">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-house-chimney"></i></a></li>
+                    <li><a href="#" id="searchicon2"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <div class="search" id="searchinput2">
+                        <input type="search" placeholder="Search...">
+                        <i class="fa-solid fa-magnifying-glass srchicon"></i>
+                    </div>
+                    <li><a href="#"><i class="fa-solid fa-user" id="user-mb"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="welcome">How we can help you?</div>
+    <div class="text">We want to be assured that our customers do have the right to give opinions on our shop and services. We are open to any suggestions and feedbacks that you may have. We are looking forward to hearing from you.
+    </div>
+    
+    <div class="carousel-container">
+        <button class="prev" onclick="prevSlide()">&#10094;</button> 
+        <div class="carousel-wrapper">
+            <div class="carousel">
+                <img src="./image/cafe.png" alt="Customers">
+                <img src="./image/foods.png" alt="Foods">
+                <img src="./image/Coffee shop.avif" alt="Cafe">
+                <img src="./image/services.png" alt="Printing Services">
+            </div>
+        </div>
+        <button class="next" onclick="nextSlide()">&#10095;</button> 
+    </div>
+
+    <div class="form-container">
+        <h3 style="color: #FFEAC5">Message Us Here</h3>
+        <form>
+            <input type="text" placeholder="Name" required><br>
+            <input type="email" placeholder="Email" required><br>
+            <textarea placeholder="Message" required></textarea><br>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h4>About Us</h4>
+                <p>Your reliable source for quality products and services.</p>
+            </div>
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 FEU Institute of Technology | All Rights Reserved
+        </div>
+    </footer>
+    </div>
+    <script src="contact.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
