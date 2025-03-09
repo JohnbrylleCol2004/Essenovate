@@ -20,3 +20,16 @@ function nextSlide() {
 window.addEventListener('load', () => {
     carousel.style.width = `${images.length * images[0].clientWidth}px`;
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".form-container form");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevents default form submission behavior
+
+        alert("Thank you for the opinion, our staff will try and give our best to make it up to you!");
+
+        form.reset(); // Clears the form after submission
+
+        location.reload(); // Reloads the page
+    });
+});

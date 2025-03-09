@@ -114,8 +114,10 @@ html, body {
 /* Carousel */
 .carousel-container {
     position: relative;
-    width: 1000px;
-    height: 400px;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 10px;
+    height: 400px; /* Keep fixed height on PC */
     overflow: hidden;
     margin: 20px auto;
     display: flex;
@@ -132,15 +134,15 @@ html, body {
 .carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: max-content; 
+    width: max-content;
     overflow-x: hidden;
 }   
 
 .carousel img {
-    width: 1000px;
-    height: auto;
+    width: 1000px; /* Same width for all images */
+    height: 400px; /* Same height for all images */
     border-radius: 10px;
-    object-fit: contain;
+    object-fit: cover; /* Ensures uniform appearance */
 }
 
 /* Navigation Buttons */
@@ -170,7 +172,7 @@ html, body {
 }
 .next { 
     right: 15px; 
-}
+}    
 
 .prev:hover, .next:hover {
     background: rgba(255, 255, 255, 0.7);
@@ -192,8 +194,6 @@ input, textarea {
     border-radius: 5px;
     font-size: 16px;
 }
-
-/* Submit button */
 .submit-btn {
     background: #f5e0c3;
     padding: 12px 25px;
@@ -300,6 +300,18 @@ input, textarea {
     font-size: 12px;
     opacity: 0.8;
 }
+@media screen and (max-width: 768px) {
+    .carousel-container {
+        height: auto; /* Allow it to adjust dynamically */
+    }
+
+    .carousel img {
+        width: 100%; /* Make images fit the screen */
+        max-width: 100vw; /* Ensure no overflow */
+        height: auto;
+        object-fit: contain; /* Maintain aspect ratio */
+    }
+}
 
 @media (max-width: 600px) {
     .footer-content {
@@ -307,7 +319,6 @@ input, textarea {
         align-items: center;
     }
 }
-
 
 /* Responsive Design */
 @media (max-width: 600px) {
