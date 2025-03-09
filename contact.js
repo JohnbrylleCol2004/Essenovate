@@ -33,3 +33,34 @@ document.addEventListener("DOMContentLoaded", function () {
         location.reload(); // Reloads the page
     });
 });
+const bar = document.querySelector('.fa-bars');
+const cross = document.querySelector('#hdcross');
+const headerbar = document.querySelector('.headerbar');
+
+bar.addEventListener('click', function() {
+    setTimeout(() => {
+        cross.style.display = 'block'; 
+        cross.style.zIndex = '2';
+    }, 200);
+    headerbar.style.right = '0'; // Slide in from the right
+});
+
+cross.addEventListener('click', function() {
+    cross.style.display = 'none';  // Hide the cross icon when clicked
+    headerbar.style.right = '-100%'; // Slide out to the right
+});
+
+
+
+
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+
+function changeSlide(n) {
+    slides[slideIndex].classList.remove("active");
+    slideIndex = (slideIndex + n + slides.length) % slides.length;
+    slides[slideIndex].classList.add("active");
+}
+
+// Initialize the first slide
+slides[slideIndex].classList.add("active");
