@@ -415,11 +415,13 @@ html, body {
     text-align: center;
     margin-top: auto;
 }
+
 .footer-content {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 20px;
+    
 }
 
 .footer-section {
@@ -429,7 +431,16 @@ html, body {
     text-align: left;
 }
 
+.footer-section p {
+    color: #FFEAC5;
+}
+
+.social-icons i{
+    color: #FFEAC5;
+}
+
 .footer-section h4 {
+    color:#f2dab2;
     margin-bottom: 15px;
     font-size: 18px;
     border-bottom: 2px solid #FFEAC5;
@@ -438,9 +449,12 @@ html, body {
 
 .footer-section ul {
     display: flex;
-    gap: 15px;
+    gap: 15px; /* Adjust spacing between items */
     justify-content: center;
     padding: 0;
+}
+
+.footer-section ul li {
     list-style: none;
 }
 
@@ -455,9 +469,15 @@ html, body {
     text-decoration: underline;
 }
 
+
+.footer-section ul li a:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
 .social-icons a {
     margin: 0 10px;
-    color: #FFEAC5;
+    color: #b9975c;
     font-size: 24px;
     text-decoration: none;
     transition: transform 0.3s;
