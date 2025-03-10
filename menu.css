@@ -340,8 +340,8 @@ html, body {
 }
 
 .tab.active {
-    border-bottom: 3px solid orange;
-    color: orange;
+    border-bottom: 3px solid #663406;
+    color: #663406;
 }
 
 
@@ -384,7 +384,7 @@ html, body {
 
 .menu-item .price {
     font-weight: bold;
-    color: orange;
+    color: #663406;
     text-align: left;
     font-size: 22px;
 }
