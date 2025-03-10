@@ -675,6 +675,7 @@ span {
         background-color:  #FFDBB5;
         transition: right 0.5s ease;
         z-index:1;
+        overflow-y: auto;
     }
 
     .headerbar .account, .headerbar .nav {
