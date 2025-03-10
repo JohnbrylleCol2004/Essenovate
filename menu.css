@@ -215,7 +215,6 @@ html, body {
 .content {
     flex: 1;
     font-size: 30px;
-    overflow-y: auto;
 }
 
 .content p {
