@@ -5,7 +5,7 @@
     list-style: none;
     text-decoration: none;
     color: black;
-    font-family: 'Sodo Sans', 'Lander', 'pike';
+    font-family:'Times New Roman', Times, serif
 }
 
 .logo img {
@@ -59,6 +59,9 @@ html, body {
     color: #6C4E31;
 }
 
+.account{
+    padding-left:20px;
+}
 .account ul {
     display: flex;
     justify-content: flex-end;
@@ -117,7 +120,14 @@ html, body {
     margin: 0;
     box-sizing: border-box;
     padding-bottom: 85px;
-   
+    position: relative;
+    z-index: 0;
+    position: relative;
+    max-width: 95%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 0px;
+    
 }
 
 /* Main Slide Layout */
@@ -125,10 +135,11 @@ html, body {
     display: flex;
     align-items: center;
     flex-wrap: wrap-reverse;
-    gap: 30px;
+    gap: 50px;
     padding: 20px 0;
-    padding-top: 100px;
-    padding-bottom: 90px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
 }
 
 .wrapper {
@@ -138,8 +149,12 @@ html, body {
 /* Text Content */
 .content {
     flex: 1;
-    font-size: 30px;
-    overflow-y: auto;
+    font-size: 30px; 
+    position:relative;
+    max-width: 100%;
+    margin: auto;
+        
+    
 }
 
 .content p {
@@ -190,10 +205,11 @@ html, body {
 /* Slider Container */
 .slider-container {
     position: relative;
-    max-width: 900px;
-    margin: auto;
-    overflow: hidden;
+    max-width: 850px;
+    margin: 20px auto; /* Adds space around the container */
+    
 }
+
 
 .slide {
     display: none;
@@ -234,15 +250,7 @@ html, body {
     background: rgba(0, 0, 0, 0.8);
 }
 
-.footer {
-    position: absolute; 
-    bottom: 0; 
-    width: 100%; 
-    background: #333; 
-    color: white; 
-    text-align: center; 
-    padding: 10px;
-}
+
 
 .footer {
     position: relative;
@@ -340,41 +348,78 @@ html, body {
 /* Responsive Design */
 
 @media (max-width: 600px) {
+    
     .footer-content {
         flex-direction: column;
         align-items: center;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1390px) {
     .main_slide {
-        flex-direction: column;
+        flex-direction: column; 
+        
     }
 
     #slideContainer {
-        order: 1;
-        width: 100%;
-        padding: 10px;
+        order: 1;   
+  
     }
 
     .content {
         order: 2;
         font-size: large;
         align-items: center;
+        flex: 1;
+        font-size: 30px; 
+        position:relative;
+        max-width: 100%;
+        margin: 0px;
+        margin-top: -50px;
+        
+        
     }
 
     .slide img {
-        width: 100%;
+        width: 100;
         padding: 10px;
         height: auto;
         object-fit: cover;
         cursor: pointer;
+        z-index:9;
+        margin-top: -50px;
+        
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-40%);
+        
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+    
+    .prev {
+        left: 10px;
+    }
+    
+    .next {
+        right: 10px;
+    }
+    
+    .prev:hover, .next:hover {
+        background: rgba(0, 0, 0, 0.8);
     }
 }
 
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 879px) {
     .header .nav, .header .account {
         display: none;
     }
@@ -418,11 +463,14 @@ html, body {
         right: -100%;
         background-color:  #FFDBB5;
         transition: right 0.5s ease;
+        overflow-y: auto;
+        
     }
 
     .headerbar .account, .headerbar .nav {
         display: block;
         font-size: 18px;
+        
     }
 
     .bar .fa-xmark {
@@ -431,7 +479,11 @@ html, body {
         right: 5vw;
         position:absolute;
         font-size: 25px;
+        
     }
+
+    
+
 
     .headerbar .nav ul {
         flex-direction: column;
@@ -469,14 +521,17 @@ html, body {
 }
 
 @media only screen and (max-width: 768px) {
+    
     .main_slide div:nth-child(1){
         font-size: 18px;
+        
     }
 
     .main_slide div:nth-child(1) p{
         padding-top: 5px;
         margin: 10px 0;
         font-size : 18px;
+        
     }
 
     .red_btn{
@@ -492,6 +547,7 @@ html, body {
     }
 
     .main_slide .slideshow-container{
-        width:70vw;
+        width:10vw;
+        
     }
 }

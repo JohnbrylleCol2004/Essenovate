@@ -5,7 +5,7 @@
     list-style: none;
     text-decoration: none;
     color: black;
-    font-family: 'Sodo Sans', 'Lander', 'pike';
+    font-family:'Times New Roman', Times, serif
 }
 
 .logo img {
@@ -63,6 +63,10 @@ html, body {
 
 .nav ul li a:hover {
     color: #6C4E31;
+}
+
+.account{
+    padding-left:20px;
 }
 
 .account ul {
@@ -215,7 +219,6 @@ html, body {
 .content {
     flex: 1;
     font-size: 30px;
-    overflow-y: auto;
 }
 
 .content p {
@@ -341,8 +344,8 @@ html, body {
 }
 
 .tab.active {
-    border-bottom: 3px solid orange;
-    color: orange;
+    border-bottom: 3px solid #663406;
+    color: #663406;
 }
 
 
@@ -385,7 +388,7 @@ html, body {
 
 .menu-item .price {
     font-weight: bold;
-    color: orange;
+    color: #663406;
     text-align: left;
     font-size: 22px;
 }
@@ -619,7 +622,7 @@ span {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 879px) {
     .header .nav, .header .account {
         display: none;
 
@@ -672,6 +675,7 @@ span {
         background-color:  #FFDBB5;
         transition: right 0.5s ease;
         z-index:1;
+        overflow-y: auto;
     }
 
     .headerbar .account, .headerbar .nav {
