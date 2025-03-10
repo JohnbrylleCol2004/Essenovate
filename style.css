@@ -463,11 +463,14 @@ html, body {
         right: -100%;
         background-color:  #FFDBB5;
         transition: right 0.5s ease;
+        overflow-y: auto;
+        
     }
 
     .headerbar .account, .headerbar .nav {
         display: block;
         font-size: 18px;
+        
     }
 
     .bar .fa-xmark {
@@ -476,6 +479,7 @@ html, body {
         right: 5vw;
         position:absolute;
         font-size: 25px;
+        
     }
 
     
