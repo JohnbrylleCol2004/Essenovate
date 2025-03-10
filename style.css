@@ -59,6 +59,10 @@ html, body {
     color: #6C4E31;
 }
 
+.account{
+    padding-left:20px;
+}
+
 .account ul {
     display: flex;
     justify-content: flex-end;
@@ -373,7 +377,7 @@ html, body {
 
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 879px) {
     .header .nav, .header .account {
         display: none;
     }
