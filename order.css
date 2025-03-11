@@ -338,6 +338,10 @@ html, body {
     font-size: 30px;
 }
 
+.account{
+    padding-left: 20px ;
+}
+
 .content p {
     font-size: 20px;
     margin: 20px 0;
@@ -570,7 +574,7 @@ html, body {
 
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 879px) {
     .header .nav, .header .account {
         display: none;
     }
