@@ -267,6 +267,10 @@ html, body {
     font-size: 20px;
 }
 
+.account {
+    padding-left: 20px;
+}
+
 .account ul li i:hover {
     color: #6C4E31;
 }
@@ -610,6 +614,8 @@ html, body {
         right: -100%;
         background-color:  #FFDBB5;
         transition: right 0.5s ease;
+        z-index: 1;
+        overflow-y: auto;
     }
 
     .headerbar .account, .headerbar .nav {
@@ -687,3 +693,4 @@ html, body {
         width:70vw;
     }
 }
+
