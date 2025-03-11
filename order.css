@@ -5,7 +5,7 @@
     list-style: none;
     text-decoration: none;
     color: black;
-    font-family: 'Sodo Sans', 'Lander', 'pike';
+    font-family:'Times New Roman', Times, serif
 }
 
 .logo img {
@@ -267,6 +267,10 @@ html, body {
     font-size: 20px;
 }
 
+.account {
+    padding-left: 20px;
+}
+
 .account ul li i:hover {
     color: #6C4E31;
 }
@@ -332,6 +336,10 @@ html, body {
 .content {
     flex: 1;
     font-size: 30px;
+}
+
+.account{
+    padding-left: 20px ;
 }
 
 .content p {
@@ -566,7 +574,7 @@ html, body {
 
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 879px) {
     .header .nav, .header .account {
         display: none;
     }
@@ -610,6 +618,8 @@ html, body {
         right: -100%;
         background-color:  #FFDBB5;
         transition: right 0.5s ease;
+        z-index: 1;
+        overflow-y: auto;
     }
 
     .headerbar .account, .headerbar .nav {
@@ -687,3 +697,4 @@ html, body {
         width:70vw;
     }
 }
+
