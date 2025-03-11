@@ -50,6 +50,16 @@ html, body {
     display: block;
 }
 
+.headerbar{
+    display: none;
+    z-index: 1;
+}
+
+.searchicon{
+    display: block;
+}
+
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -69,16 +79,10 @@ html, body {
     font-size: larger;
 }
 
-.nav ul li a {
-    display: block;
-    text-decoration: none;
-    color: black;
-    padding: 10px 20px;
-}
-
 .nav ul li a:hover {
     color: #6C4E31;
 }
+
 .account{
     padding-left: 20px;
 }
@@ -118,6 +122,10 @@ html, body {
 
 .bar {
     display: none;
+}
+
+.account{
+    flex:0.1
 }
 
 .account ul{
