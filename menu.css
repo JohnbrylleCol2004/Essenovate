@@ -50,7 +50,7 @@ html, body {
     height: 100px;
     padding: 0 8vw;
     background-color: #FFEAC5;
-    border-bottom: 2px solid #6C4E31;
+    border-bottom: 2px solid #663406;
     box-shadow: 0 2px 20px #FFDBB5;
     
 }
@@ -63,7 +63,7 @@ html, body {
 }
 
 .nav ul li a:hover {
-    color: #6C4E31;
+    color: #663406;
 }
 
 .account{
@@ -78,7 +78,7 @@ html, body {
 }
 
 .account ul li i:hover {
-    color: #6C4E31;
+    color: #663406;
 }
 
 .search {
@@ -96,7 +96,7 @@ html, body {
 }
 
 .srchicon {
-    background-color: #6C4E31;
+    background-color: #663406;
     color: white;
     padding: 5px;
     border-radius: 4px;
@@ -211,8 +211,10 @@ html, body {
     flex-wrap: wrap-reverse;
     gap: 50px;
     padding: 20px 0;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 90px;
+    
+    
 }
 
 .content {
@@ -415,6 +417,30 @@ html, body {
     box-sizing: border-box;
 }
 
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #663406;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTop:hover {
+    background-color: #783d06;
+}
+
+
 /* Footer sticks to the bottom */
 .footer {
     position: absolute; 
@@ -519,6 +545,13 @@ html, body {
 }
 
 @media (max-width: 768px) {
+    #backToTop {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        bottom: 15px;
+        right: 15px;
+    }
     .menu-items {
         grid-template-columns: 1fr;
     }
@@ -535,6 +568,9 @@ html, body {
     .slider-container {
         width: 100%; /* Full width on small screens */
         padding: 10px;
+        margin-top: -30px;
+        margin-bottom: -30px;
+        
     }
 
     .prev, .next {
@@ -546,7 +582,7 @@ html, body {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .menu-container {
-        margin-top: 90px;
+        margin-top: -20px;
         max-width: 95%;
     }
     .menu-item {
@@ -647,20 +683,12 @@ span {
 @media only screen and (max-width: 879px) {
     .header .nav, .header .account {
         display: none;
-
     }
-
-    .Top-container{
-        margin-top: -50px;
-        margin-bottom: -130px;
-        
-    }
-
 
     .search {
         display: flex;
         align-items: center;
-        border: 1px solid #6C4E31;
+        border: 1px solid  #663406;
         padding: 5px;
         border-radius: 5px;
         background-color: #ffffff;
@@ -694,15 +722,16 @@ span {
         width: 100%;
         bottom: 0;
         right: -100%;
-        background-color:  #FFDBB5;
+        background-color: #FFEAC5;
         transition: right 0.5s ease;
-        z-index:1;
         overflow-y: auto;
+        
     }
 
     .headerbar .account, .headerbar .nav {
         display: block;
         font-size: 18px;
+        
     }
 
     .bar .fa-xmark {
@@ -711,11 +740,11 @@ span {
         right: 5vw;
         position:absolute;
         font-size: 25px;
+        
     }
 
-    .fa-bar{
-        font-size: 90px;
-    }
+    
+
 
     .headerbar .nav ul {
         flex-direction: column;
@@ -724,15 +753,16 @@ span {
     }
 
     .headerbar .nav li {
+        color:#663406;
+        font-size: larger;
         width: 96vw;
         margin: 10px 0;
         padding: 15px 30px;
-        background-color: #f2dab2 ;
+        background-color:  #FFEAC5 ;
         box-shadow: 0 2px 5px rgb(135, 107, 107);
         font-size: 15px;
         margin-top: 5px;
         cursor: pointer;
-        
     }
 
     .headerbar .nav a {
@@ -743,16 +773,19 @@ span {
     .headerbar .account {
         line-height: 40px;
         margin-top: 60px;
-        background-color:  #e0b983;
+        background-color: #663406;
         box-shadow: 0 2px 15px rgb(135, 107, 107);
         padding: 15px;
-    
     }
 
     .headerbar .account ul {
         justify-content: space-between;
     }
 }
+
+
+
+
 
 @media (max-width: 768px) {
     .main_slide {
