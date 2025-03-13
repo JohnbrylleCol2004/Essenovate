@@ -509,12 +509,12 @@ html, body {
 
 .footer-section ul li a {
     text-decoration: none;
-    color: #FFEAC5;
+    color: #ffffff;
     transition: color 0.3s;
 }
 
 .footer-section ul li a:hover {
-    color: #FFD700;
+    color: #ffffff;
     text-decoration: underline;
 }
 
