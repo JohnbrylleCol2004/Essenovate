@@ -81,7 +81,6 @@ html, body {
     color:#a55a13;
 }
 
-
 .search {
     display: none;
     width: 200px;
@@ -509,7 +508,7 @@ html, body {
 
 .footer-section ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #FFEAC5;
     transition: color 0.3s;
 }
 
@@ -520,7 +519,7 @@ html, body {
 
 
 .footer-section ul li a:hover {
-    color: #FFD700;
+    color:#ffffff;
     text-decoration: underline;
 }
 
@@ -534,7 +533,7 @@ html, body {
 
 .social-icons a:hover {
     transform: scale(1.2);
-    color: #FFD700;
+    color: #ffffff;
 }
 
 .footer-bottom {
