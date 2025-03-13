@@ -43,7 +43,7 @@ html, body {
     height: 100px;
     padding: 0 8vw;
     background-color: #FFEAC5;
-    border-bottom: 2px solid #6C4E31;
+    border-bottom: 2px solid #663406;
     box-shadow: 0 2px 20px #FFDBB5;
     
 }
@@ -56,7 +56,7 @@ html, body {
 }
 
 .nav ul li a:hover {
-    color: #6C4E31;
+    color:#663406;
 }
 
 .account{
@@ -70,7 +70,7 @@ html, body {
 }
 
 .account ul li i:hover {
-    color: #6C4E31;
+    color:#663406;
 }
 
 .search {
@@ -88,7 +88,7 @@ html, body {
 }
 
 .srchicon {
-    background-color: #6C4E31;
+    background-color:#663406;
     color: white;
     padding: 5px;
     border-radius: 4px;
@@ -193,8 +193,8 @@ html, body {
 }
 
 .red_btn:hover {
-    border: 1px solid #6C4E31;
-    box-shadow: 0 5px 15px #6C4E31;
+    border: 1px solid#663406;
+    box-shadow: 0 5px 15px#663406;
     color: #FFEAC5;
 }
 
@@ -287,6 +287,15 @@ html, body {
     color: #FFEAC5;
 }
 
+.social-icons a{
+    margin: 0 10px;
+    color: #663406;
+    font-size: 24px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+
 .footer-section h4 {
     color:#f2dab2;
     margin-bottom: 15px;
@@ -313,27 +322,14 @@ html, body {
 }
 
 .footer-section ul li a:hover {
-    color: #FFD700;
+    color: #ffffff;
     text-decoration: underline;
 }
 
 
 .footer-section ul li a:hover {
-    color: #FFD700;
+    color: #fff;
     text-decoration: underline;
-}
-
-.social-icons a {
-    margin: 0 10px;
-    color: #b9975c;
-    font-size: 24px;
-    text-decoration: none;
-    transition: transform 0.3s;
-}
-
-.social-icons a:hover {
-    transform: scale(1.2);
-    color: #FFD700;
 }
 
 .footer-bottom {
@@ -427,7 +423,7 @@ html, body {
     .search {
         display: flex;
         align-items: center;
-        border: 1px solid #6C4E31;
+        border: 1px solid  #663406;
         padding: 5px;
         border-radius: 5px;
         background-color: #ffffff;
@@ -461,7 +457,7 @@ html, body {
         width: 100%;
         bottom: 0;
         right: -100%;
-        background-color:  #FFDBB5;
+        background-color: #FFEAC5;
         transition: right 0.5s ease;
         overflow-y: auto;
         
@@ -492,10 +488,12 @@ html, body {
     }
 
     .headerbar .nav li {
+        color:#663406;
+        font-size: larger;
         width: 96vw;
         margin: 10px 0;
         padding: 15px 30px;
-        background-color: #f2dab2 ;
+        background-color:  #FFEAC5 ;
         box-shadow: 0 2px 5px rgb(135, 107, 107);
         font-size: 15px;
         margin-top: 5px;
@@ -510,7 +508,7 @@ html, body {
     .headerbar .account {
         line-height: 40px;
         margin-top: 60px;
-        background-color:  #e0b983;
+        background-color: #663406;
         box-shadow: 0 2px 15px rgb(135, 107, 107);
         padding: 15px;
     }
