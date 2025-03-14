@@ -7,7 +7,164 @@
     color: black;
     font-family:'Times New Roman', Times, serif
 }
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFEAC5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
+.coffee-cup {
+    position: relative;
+    right: -80px;
+    width: 100px; /* Slightly smaller width for a tea cup */
+    height: 80px; /* Shorter height for a tea cup */
+    background:#663406; /* Lighter color for a tea cup */
+    border-radius: 0 0 50px 50px; /* More rounded bottom */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.coffee-cup::before {
+    content: '';
+    position: absolute;
+    top: 15px; /* Adjusted position for the handle */
+    right: -20px; /* Adjusted position for the handle */
+    width: 20px; /* Smaller width for a more delicate handle */
+    height: 20px; /* Smaller height for a more delicate handle */
+    border: 5px solid#663406; /* Color of the handle */
+    border-radius: 50%; /* Rounded handle */
+    transform: rotate(45deg); /* Rotate the handle for a better appearance */
+}
+
+.coffee-cup::after {
+    content: '';
+    position: absolute;
+    top: -10px; /* Adjusted position for the tea */
+    left: 10px; /* Centered the tea */
+    width: 80px; /* Width of the tea */
+    height: 20px; /* Height of the tea */
+    background: rgba(255, 228, 196, 0.8); /* Light color for tea */
+    border-radius: 50%; /* Rounded top for the tea */
+}
+
+.steam {
+    position: absolute;
+    top: 43%; /* Adjusted for better positioning */
+    right: 50vw;
+    transform: translateX(-50%);
+    width: 15px; /* Base width */
+    height: 60px; /* Base height */
+    background: rgba(255, 255, 255, 0.8); /* Lighter color for a more realistic steam */
+    border-radius: 50%; /* Keep it rounded */
+    animation: steam-rise 3s infinite ease-in-out, steam-wave 2s infinite ease-in-out;
+    opacity: 0.9; /* Initial opacity */
+}
+
+.steam-1 { 
+    animation-delay: 0s; 
+    left: 50%; /* Centered */
+}
+
+.steam-2 { 
+    animation-delay: 0.5s; 
+    left: 45%; /* Slightly to the left */
+}
+
+.steam-3 { 
+    animation-delay: 1s; 
+    left: 55%; /* Slightly to the right */
+}
+
+.steam-4 { 
+    animation-delay: 0.25s; 
+    left: 48%; /* Slightly to the left */
+}
+
+.steam-5 { 
+    animation-delay: 0.75s; 
+    left: 52%; /* Slightly to the right */
+}
+
+@keyframes steam-rise {
+    0% {
+        transform: translate(-50%, 0) scale(1);
+        opacity: 0.9; /* Start with higher opacity */
+    }
+    100% {
+        transform: translate(-50%, -150px) scale(1.2); /* Increased scale for a puffier look */
+        opacity: 0; /* Fade out */
+    }
+}
+
+@keyframes steam-wave {
+    0% {
+        transform: translate(0, 0); /* Start position */
+    }
+    20% {
+        transform: translate(10px, -20px); /* Move right and up */
+    }
+    40% {
+        transform: translate(-10px, -40px); /* Move left and up */
+    }
+    60% {
+        transform: translate(10px, -60px); /* Move right and up */
+    }
+    80% {
+        transform: translate(-5px, -80px); /* Slight left adjustment */
+    }
+    100% {
+        transform: translate(0, -100px); /* Centered and up */
+    }
+}
+
+/* Additional steam variations */
+.steam-4 {
+    animation-delay: 0.25s; /* New steam element */
+}
+
+.steam-5 {
+    animation-delay: 0.75s; /* New steam element */
+}
+
+
+.loading-text {
+    font-size: 24px; /* Adjust font size as needed */
+    color: #663406; /* Color of the text */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Space above the text */
+    opacity: 0; /* Start with hidden text */
+    animation: fadeIn 1s forwards, bounce 1s infinite; /* Apply animations */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start invisible */
+        transform: translateY(20px); /* Start slightly lower */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Original position */
+    }
+    40% {
+        transform: translateY(-10px); /* Move up */
+    }
+    60% {
+        transform: translateY(-5px); /* Move up slightly */
+    }
+}
+        
 .logo img {
     width: 250px;
 }
@@ -70,7 +227,7 @@ html, body {
 }
 
 .account ul li i:hover {
-    color:#a55a13;
+    color:#793f08;
 }
 
 .search {
@@ -448,6 +605,10 @@ html, body {
         cursor: pointer;
     }
 
+    .bar:hover {
+        color: #663406;
+    }
+
     .headerbar {
         overflow: hidden;
         display: flex;
@@ -477,8 +638,6 @@ html, body {
         font-size: 25px;
         
     }
-
-    
 
 
     .headerbar .nav ul {
