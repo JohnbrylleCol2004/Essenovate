@@ -21,6 +21,8 @@ $(document).ready(function () {
         $("#totalPrice").text(`₱${overall.toFixed(2)}`);
         $("#servicecharge").text(`₱${serviceCharge.toFixed(2)}`);
         $("#deliveryfee").text(`₱${deliveryFee.toFixed(2)}`);
+
+        $("#paymentAmount").attr("placeholder", `Enter at least ₱${overall.toFixed(2)}`);
     }
 
     $(".quantity").on("input", updateTotal);
@@ -43,34 +45,52 @@ $(document).ready(function () {
         $("#signupModal").fadeOut();
     });
 
+    $("#paymentAmount").on("input", function () {
+        let total = parseFloat($("#totalPrice").text().replace("₱", "")) || 0;
+        let payment = parseFloat($(this).val()) || 0;
+        let change = payment - total;
+
+        if (change >= 0) {
+            $("#changeAmount").text(`₱${change.toFixed(2)}`);
+            $("#error-msg").hide();
+        } else {
+            $("#changeAmount").text("₱0");
+            $("#error-msg").show();
+        }
+    });
+
     $("#confirmOrder").on("click", function () {
         const email = $.trim($("#email").val());
         const password = $.trim($("#password").val());
         const homeAddress = $.trim($("#homeAddress").val());
+        const payment = parseFloat($("#paymentAmount").val()) || 0;
+        const total = parseFloat($("#totalPrice").text().replace("₱", "")) || 0;
 
         if (email === "" || password === "" || homeAddress === "") {
             alert("Please enter your email, password, and address to proceed.");
             return;
         }
 
-        alert(`Order confirmed!\nTotal: ${$("#totalPrice").text()}\nEmail: ${email}\nAddress: ${homeAddress}`);
+        if (payment < total) {
+            alert("⚠ Payment is insufficient! Please enter a valid amount.");
+            return;
+        }
 
-      
+        alert(`✅ Order confirmed!\nTotal: ${$("#totalPrice").text()}\nChange: ₱${(payment - total).toFixed(2)}\nEmail: ${email}\nAddress: ${homeAddress}`);
+
         $("#signupModal").fadeOut();
 
-        
         $(".quantity").val(""); 
-        $("#email, #password, #homeAddress").val(""); 
-        $("#totalPrice, #servicecharge, #deliveryfee").text("₱0.00"); 
-        $(".subtotal").text("₱0"); 
+        $("#email, #password, #homeAddress, #paymentAmount").val(""); 
+        $("#totalPrice, #servicecharge, #deliveryfee, #changeAmount").text("₱0.00"); 
+        $(".subtotal").text("₱0");
+        $("#error-msg").hide();
     });
 });
 
 
+
 // end of order script
-
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const searchicon1 = document.querySelector('#searchicon1');
@@ -148,3 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+function hideLoadingScreen() {
+    setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.display = 'none';
+    }, 3000); // 3-second delay
+}
