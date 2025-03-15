@@ -8,12 +8,174 @@
     color: black;
     font-family: 'Times New Roman', 'Times', 'serif';
 }
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFEAC5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.coffee-cup {
+    position: relative;
+    right: -80px;
+    width: 100px; /* Slightly smaller width for a tea cup */
+    height: 80px; /* Shorter height for a tea cup */
+    background:#663406; /* Lighter color for a tea cup */
+    border-radius: 0 0 50px 50px; /* More rounded bottom */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.coffee-cup::before {
+    content: '';
+    position: absolute;
+    top: 15px; /* Adjusted position for the handle */
+    right: -20px; /* Adjusted position for the handle */
+    width: 20px; /* Smaller width for a more delicate handle */
+    height: 20px; /* Smaller height for a more delicate handle */
+    border: 5px solid#663406; /* Color of the handle */
+    border-radius: 50%; /* Rounded handle */
+    transform: rotate(45deg); /* Rotate the handle for a better appearance */
+}
+
+.coffee-cup::after {
+    content: '';
+    position: absolute;
+    top: -10px; /* Adjusted position for the tea */
+    left: 10px; /* Centered the tea */
+    width: 80px; /* Width of the tea */
+    height: 20px; /* Height of the tea */
+    background: rgba(255, 228, 196, 0.8); /* Light color for tea */
+    border-radius: 50%; /* Rounded top for the tea */
+}
+
+.steam {
+    position: absolute;
+    top: 43%; /* Adjusted for better positioning */
+    right: 50vw;
+    transform: translateX(-50%);
+    width: 15px; /* Base width */
+    height: 60px; /* Base height */
+    background: rgba(255, 255, 255, 0.8); /* Lighter color for a more realistic steam */
+    border-radius: 50%; /* Keep it rounded */
+    animation: steam-rise 3s infinite ease-in-out, steam-wave 2s infinite ease-in-out;
+    opacity: 0.9; /* Initial opacity */
+}
+
+.steam-1 { 
+    animation-delay: 0s; 
+    left: 50%; /* Centered */
+}
+
+.steam-2 { 
+    animation-delay: 0.5s; 
+    left: 45%; /* Slightly to the left */
+}
+
+.steam-3 { 
+    animation-delay: 1s; 
+    left: 55%; /* Slightly to the right */
+}
+
+.steam-4 { 
+    animation-delay: 0.25s; 
+    left: 48%; /* Slightly to the left */
+}
+
+.steam-5 { 
+    animation-delay: 0.75s; 
+    left: 52%; /* Slightly to the right */
+}
+
+@keyframes steam-rise {
+    0% {
+        transform: translate(-50%, 0) scale(1);
+        opacity: 0.9; /* Start with higher opacity */
+    }
+    100% {
+        transform: translate(-50%, -150px) scale(1.2); /* Increased scale for a puffier look */
+        opacity: 0; /* Fade out */
+    }
+}
+
+@keyframes steam-wave {
+    0% {
+        transform: translate(0, 0); /* Start position */
+    }
+    20% {
+        transform: translate(10px, -20px); /* Move right and up */
+    }
+    40% {
+        transform: translate(-10px, -40px); /* Move left and up */
+    }
+    60% {
+        transform: translate(10px, -60px); /* Move right and up */
+    }
+    80% {
+        transform: translate(-5px, -80px); /* Slight left adjustment */
+    }
+    100% {
+        transform: translate(0, -100px); /* Centered and up */
+    }
+}
+
+/* Additional steam variations */
+.steam-4 {
+    animation-delay: 0.25s; /* New steam element */
+}
+
+.steam-5 {
+    animation-delay: 0.75s; /* New steam element */
+}
+
+
+.loading-text {
+    font-size: 24px; /* Adjust font size as needed */
+    color: #663406; /* Color of the text */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Space above the text */
+    opacity: 0; /* Start with hidden text */
+    animation: fadeIn 1s forwards, bounce 1s infinite; /* Apply animations */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start invisible */
+        transform: translateY(20px); /* Start slightly lower */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Original position */
+    }
+    40% {
+        transform: translateY(-10px); /* Move up */
+    }
+    60% {
+        transform: translateY(-5px); /* Move up slightly */
+    }
+}
+
+.logo img {
+    width: 250px;
+}
+
 body {
-    font-family: 'Sodo Sans', 'Lander', 'pike';
     margin: 0;
     padding: 0;
-    background-color: #FFEAC5;
-    text-align: center;
+    background-color: #FFEAC5; /* Same as .home */
+    height: 100vh;
+    width: 100vw;
 }
 
 html, body {
@@ -21,191 +183,7 @@ html, body {
     display: flex;
     flex-direction: column;
 }
-#loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #FFEAC5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
 
-        .coffee-cup {
-            position: relative;
-            right: -57px;
-            width: 100px; /* Slightly smaller width for a tea cup */
-            height: 80px; /* Shorter height for a tea cup */
-            background:#663406; /* Lighter color for a tea cup */
-            border-radius: 0 0 50px 50px; /* More rounded bottom */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .coffee-cup::before {
-            content: '';
-            position: absolute;
-            top: 15px; /* Adjusted position for the handle */
-            right: -20px; /* Adjusted position for the handle */
-            width: 20px; /* Smaller width for a more delicate handle */
-            height: 20px; /* Smaller height for a more delicate handle */
-            border: 5px solid#663406; /* Color of the handle */
-            border-radius: 50%; /* Rounded handle */
-            transform: rotate(45deg); /* Rotate the handle for a better appearance */
-        }
-        
-        .coffee-cup::after {
-            content: '';
-            position: absolute;
-            top: -10px; /* Adjusted position for the tea */
-            left: 10px; /* Centered the tea */
-            width: 80px; /* Width of the tea */
-            height: 20px; /* Height of the tea */
-            background: rgba(255, 228, 196, 0.8); /* Light color for tea */
-            border-radius: 50%; /* Rounded top for the tea */
-        }
-        
-        .steam {
-            position: absolute;
-            top: 43%; /* Adjusted for better positioning */
-            right: 50vw;
-            transform: translateX(-50%);
-            width: 15px; /* Base width */
-            height: 60px; /* Base height */
-            background: rgba(255, 255, 255, 0.8); /* Lighter color for a more realistic steam */
-            border-radius: 50%; /* Keep it rounded */
-            animation: steam-rise 3s infinite ease-in-out, steam-wave 2s infinite ease-in-out;
-            opacity: 0.9; /* Initial opacity */
-        }
-        
-        .steam-1 { 
-            animation-delay: 0s; 
-            left: 50%; /* Centered */
-        }
-        
-        .steam-2 { 
-            animation-delay: 0.5s; 
-            left: 45%; /* Slightly to the left */
-        }
-        
-        .steam-3 { 
-            animation-delay: 1s; 
-            left: 55%; /* Slightly to the right */
-        }
-        
-        .steam-4 { 
-            animation-delay: 0.25s; 
-            left: 48%; /* Slightly to the left */
-        }
-        
-        .steam-5 { 
-            animation-delay: 0.75s; 
-            left: 52%; /* Slightly to the right */
-        }
-        
-        @keyframes steam-rise {
-            0% {
-                transform: translate(-50%, 0) scale(1);
-                opacity: 0.9; /* Start with higher opacity */
-            }
-            100% {
-                transform: translate(-50%, -150px) scale(1.2); /* Increased scale for a puffier look */
-                opacity: 0; /* Fade out */
-            }
-        }
-        
-        @keyframes steam-wave {
-            0% {
-                transform: translate(0, 0); /* Start position */
-            }
-            20% {
-                transform: translate(10px, -20px); /* Move right and up */
-            }
-            40% {
-                transform: translate(-10px, -40px); /* Move left and up */
-            }
-            60% {
-                transform: translate(10px, -60px); /* Move right and up */
-            }
-            80% {
-                transform: translate(-5px, -80px); /* Slight left adjustment */
-            }
-            100% {
-                transform: translate(0, -100px); /* Centered and up */
-            }
-        }
-        
-        /* Additional steam variations */
-        .steam-4 {
-            animation-delay: 0.25s; /* New steam element */
-        }
-        
-        .steam-5 {
-            animation-delay: 0.75s; /* New steam element */
-        }
-
-
-        .loading-text {
-            font-size: 20px; /* Adjust font size as needed */
-            color: #663406; /* Color of the text */
-            text-align: center; /* Center the text */
-            margin-top: 20px; /* Space above the text */
-            opacity: 0; /* Start with hidden text */
-            animation: fadeIn 1s forwards, bounce 1s infinite; /* Apply animations */
-        }
-        
-        @keyframes fadeIn {
-            0% {
-                opacity: 0; /* Start invisible */
-                transform: translateY(20px); /* Start slightly lower */
-            }
-            100% {
-                opacity: 1; /* Fully visible */
-                transform: translateY(0); /* Move to original position */
-            }
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0); /* Original position */
-            }
-            40% {
-                transform: translateY(-10px); /* Move up */
-            }
-            60% {
-                transform: translateY(-5px); /* Move up slightly */
-            }
-        }
-.headerbar{
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    bottom: 0;
-    right: -100%;
-    background-color: #FFDBB5;
-    transition: right 0.5s ease;
-    z-index: 2;
-    overflow-y: auto;
-}
-#hdcross {
-    position: absolute;
-    top: 15px; 
-    right: 15px; 
-    font-size: 24px; 
-    color: black; 
-    z-index: 10; 
-    padding: 5px; 
-    border-radius: 50%; 
-}
-
-.searchicon{
-    display: block;
-}
 
 .headerbar{
     display: none;
@@ -216,7 +194,6 @@ html, body {
     display: block;
 }
 
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -224,7 +201,7 @@ html, body {
     height: 100px;
     padding: 0 8vw;
     background-color: #FFEAC5;
-    border-bottom: 2px solid #6C4E31;
+    border-bottom: 2px solid #663406;
     box-shadow: 0 2px 20px #FFDBB5;
     
 }
@@ -237,13 +214,12 @@ html, body {
 }
 
 .nav ul li a:hover {
-    color: #6C4E31;
+    color:#663406;
 }
 
 .account{
-    padding-left: 20px;
+    padding-left:20px;
 }
-
 .account ul {
     display: flex;
     justify-content: flex-end;
@@ -252,8 +228,9 @@ html, body {
 }
 
 .account ul li i:hover {
-    color:#a55a13;
+    color:#793f08;
 }
+
 .search {
     display: none;
     width: 200px;
@@ -269,7 +246,7 @@ html, body {
 }
 
 .srchicon {
-    background-color: #6C4E31;
+    background-color:#663406;
     color: white;
     padding: 5px;
     border-radius: 4px;
@@ -288,6 +265,7 @@ html, body {
     display: flex;
     justify-content: end;
 }
+
 .logo img {
     width: 250px;
 }
@@ -325,7 +303,6 @@ html, body {
     max-width: 1400px; /* Limit width on larger screens */
     margin: 20px auto;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .map-container iframe {
@@ -335,84 +312,97 @@ html, body {
 .contact-container {
     display: flex;
     justify-content: space-between;
-    background: #FFDBB5;
-    padding: 50px;
-    margin: 30px;
-    min-height: 400px;
-    border-radius: 10px;
-    color: #FFEAC5;
+    gap: 50px;
+    margin: 20px auto;
 }
 .contact-container h3{
-    margin-bottom: 20px;
+    font-size: 30px;
     color: #6C4E31;
-}
-.form-section {
-    width: 50%;
+    margin-bottom: 20px;
 }
 .contact-info {
     font-size: 15px;
     line-height: 1.8;
-    background:  #6C4E31;
+    background: #6C4E31;
     padding: 50px 30px;
     border-radius: 9px;
     margin-top: 0;
+    color: #FFDBB5;
+    text-align: center; /* Centers text for a cleaner look */
 }
-.contact-info h4{
+
+.contact-info h4 {
     font-size: 30px;
     margin-bottom: 10px;
     color: #FFDBB5;
 }
-.contact-item {
+
+.contact-item, .contact-box {
     margin-bottom: 30px;
     padding: 20px;
     background: #FFDBB5;
     border-radius: 5px;
     color: #6C4E31;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
 }
-.contact-desc{
+
+.contact-desc {
     color: #6C4E31;
 }
+
 .contact-email {
     list-style-type: none; 
+    padding: 0;
 }
+
 .contact-email li {
     display: block;
     margin-top: 5px;
     color: #6C4E31;
 }
-.contact-box{
-    margin-bottom: 30px;
-    padding: 20px;
-    background: #FFDBB5;
-    border-radius: 5px;
-    color: #6C4E31;
-}
+
+/* Responsive Form Fields */
 .input-row {
     display: flex;
     gap: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Ensures proper wrapping on small screens */
 }
+
 input, textarea {
     width: 100%;
-    padding: 20px;
-    border: none;
+    max-width: 600px; /* Prevents stretching on large screens */
+    padding: 15px;
+    border: 1px solid #6C4E31; /* Adds a slight border for visibility */
     border-radius: 5px;
+    font-size: 16px;
 }
+
+/* Focus Styles for Accessibility */
+input:focus, textarea:focus {
+    outline: 2px solid #FFDBB5;
+    box-shadow: 0px 0px 8px rgba(255, 219, 181, 0.8);
+}
+
+/* Submit Button */
 .submit-btn {
     background: #6C4E31;
     color: #FFDBB5;
-    padding: 20px 30px;
+    padding: 15px 30px;
     margin-top: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.4s ease, transform 0.2s ease;
 }
+
 .submit-btn:hover {
     background: #FFEAC5;
     color: #6C4E31;
-    transition: 0.4s ease;
+    transform: scale(1.05); /* Slight pop effect */
 }
+
 .container {
     .container {
         display: flex;
@@ -553,14 +543,14 @@ input, textarea {
         border-radius: 5px;
         background-color: #ffffff;
     }
-    
+
     .search input {
         border: none;
         outline: none;
         padding: 5px;
         width: 150px;
     }
-    
+
     .srchicon {
         display: none;
         cursor: pointer;
@@ -585,13 +575,11 @@ input, textarea {
         background-color: #FFEAC5;
         transition: right 0.5s ease;
         overflow-y: auto;
-        
     }
 
     .headerbar .account, .headerbar .nav {
         display: block;
         font-size: 18px;
-        
     }
 
     .bar .fa-xmark {
@@ -600,10 +588,7 @@ input, textarea {
         right: 5vw;
         position:absolute;
         font-size: 25px;
-        
     }
-
-    
 
 
     .headerbar .nav ul {
@@ -643,7 +628,6 @@ input, textarea {
     }
 }
 
-
 @media (max-width: 768px) {
     .map-container {
         width: 100%; /* Ensures it takes the full screen width */
@@ -656,39 +640,31 @@ input, textarea {
     }
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .contact-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 30px;
+        flex-direction: column; /* Stacks elements vertically */
+        align-items: center; /* Centers content */
+        gap: 20px; /* Reduces gap for better spacing */
     }
 
-    .contact-info {  
-        margin-top: 10px;
-        padding: 20px;
-        width: 90%;
+    .contact-info {
+        width: 90%; /* Prevents it from being too wide */
+        padding: 30px 20px; /* Adjust padding for better fit */
     }
 
     .contact-item, .contact-box {
-        padding: 15px;
+        width: 90%; /* Ensures proper fit within screen */
     }
 }
-@media (max-width: 768px) {
-    .form-section {
-        width: 100%; /* Make form take full width */
-    }
-
-    .input-row {
-        flex-direction: column; /* Stack inputs vertically */
-        gap: 20px; /* Add spacing between inputs */
-    }
-
+@media (max-width: 480px) {
     input, textarea {
-        width: 100%; /* Ensure inputs are full-width */
+        font-size: 14px; /* Smaller font for smaller screens */
+        padding: 12px; /* Slightly reduced padding */
     }
 
     .submit-btn {
-        width: 100%; /* Make the button full width */
-        text-align: center;
+        width: 100%; /* Makes button full width */
     }
 }
+

@@ -1,38 +1,3 @@
-const carousel = document.querySelector('.carousel');
-const images = document.querySelectorAll('.carousel img');
-let index = 0;
-
-function updateSlide() {
-    const imageWidth = images[0].clientWidth; // Get actual image width
-    carousel.style.transform = `translateX(-${index * imageWidth}px)`;
-}
-
-function prevSlide() {
-    index = (index > 0) ? index - 1 : images.length - 1;
-    updateSlide();
-}
-
-function nextSlide() {
-    index = (index < images.length - 1) ? index + 1 : 0;
-    updateSlide();
-}
-
-window.addEventListener('load', () => {
-    carousel.style.width = `${images.length * images[0].clientWidth}px`;
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector(".form-container form");
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevents default form submission behavior
-
-        alert("Thank you for the opinion, our staff will try and give our best to make it up to you!");
-
-        form.reset(); // Clears the form after submission
-
-        location.reload(); // Reloads the page
-    });
-});
 document.addEventListener('DOMContentLoaded', () => {
     const searchicon1 = document.querySelector('#searchicon1');
     const searchicon2 = document.querySelector('#searchicon2');
@@ -85,18 +50,27 @@ cross.addEventListener('click', function() {
     headerbar.style.right = '-100%'; // Slide out to the right
 });
 
-let slideIndex = 0;
-const slides = document.querySelectorAll(".slide");
+document.addEventListener('DOMContentLoaded', () => {
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('#slideContainer .slide');
 
-function changeSlide(n) {
-    slides[slideIndex].classList.remove("active");
-    slideIndex = (slideIndex + n + slides.length) % slides.length;
-    slides[slideIndex].classList.add("active");
-}
+    // Show the first slide initially
+    showSlides();
 
-// Initialize the first slide
-slides[slideIndex].classList.add("active");
+    // Add click event to each slide to cycle to the next slide
+    slides.forEach((slide) => {
+        slide.addEventListener('click', () => {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlides();
+        });
+    });
 
+    function showSlides() {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === slideIndex ? 'block' : 'none';
+        });
+    }
+});
 function hideLoadingScreen() {
     setTimeout(() => {
         const loadingScreen = document.getElementById('loading-screen');
