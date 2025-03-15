@@ -96,3 +96,10 @@ function changeSlide(n) {
 
 // Initialize the first slide
 slides[slideIndex].classList.add("active");
+
+function hideLoadingScreen() {
+    setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.display = 'none';
+    }, 3000); // 3-second delay
+}

@@ -10,7 +10,20 @@
     
     
 </head>
-<body>
+<body onload="hideLoadingScreen()">
+    <div id="loading-screen">
+        <div class="container">
+            <div class="steam">
+                <div class="steam steam-1"></div>
+                    <div class="steam steam-2"></div>
+                    <div class="steam steam-3"></div>
+            </div>
+            <div class="coffee-cup">
+                <div class="handle"></div>
+            </div>
+            <div class="loading-text">Brewing your experience...</div>
+        </div>
+    </div>
     <header>
         <div class="header">
             <div class="headerbar">
@@ -39,22 +52,22 @@
                 </div>
                 <div class="nav">
                     <ul>
-                        <a href="">
+                        <a href="index.html">
                             <li>Home</li>
                         </a>
-                        <a href="">
+                        <a href="service.html">
                             <li>Service</li>
                         </a>
-                        <a href="Menu.html">
+                        <a href="menu.html">
                             <li>Menu</li>
                         </a>
-                        <a href="">
+                        <a href="order.html">
                             <li>Order</li>
                         </a>
-                        <a href="">
+                        <a href="about.html">
                             <li>About</li>
                         </a>
-                        <a href="">
+                        <a href="contact.html">
                             <li>Contact</li>
                         </a>
                     </ul>
@@ -96,27 +109,10 @@
             </div>
         </div>
     </header>
+    <div class="image-container">
+        <img src="./image/How.jpg" alt="Vitality Tea Contact Image">
+    </div>
 
-    
-    <div class="welcome">How we can help you?</div>
-    <div class="text">We want to be assured that our customers do have the right to
-         give opinions on our shop and services. We are open to any suggestions and 
-         feedbacks that you may have. We are looking forward to hearing from you.
-    </div>
-    
-    <div class="carousel-container">
-        <button class="prev" onclick="prevSlide()">&#10094;</button> 
-        <div class="carousel-wrapper">
-            <div class="carousel">
-                <img src="./image/5.png" alt="Customers">
-                <img src="./image/2.png" alt="About">
-                <img src="./image/3.png" alt="Cafe">
-                <img src="./image/4.png" alt="Printing Services">
-                <img src="./image/1.png" alt="Foods">
-            </div>
-        </div>
-        <button class="next" onclick="nextSlide()">&#10095;</button> 
-    </div>
     <div class="contact-container">
         <div class="form-section">
             <h3>Message Us Here</h3>
@@ -138,7 +134,13 @@
             <p class="contact-item"><strong class="contact-desc">Address:</strong> Padre Paredes St, Sampaloc, Manila, 
                 1015 Metro Manila</p>
             <p class="contact-item"><strong class="contact-desc">Call Us:</strong> (02) 8281 88881</p>
-            <p class="contact-item"><strong class="contact-desc">Email:</strong> contact@vitalitytea.com</p>
+            <div class="contact-box">
+                <p class="email"><strong>Email:</strong></p>
+                <ul class="contact-email">
+                    <li>contact@vitalitytea.com</li>
+                    <li>Admissions@feutech.edu.ph</li>
+                </ul>
+            </div>
         </div>
     </div>
     
@@ -178,7 +180,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2025 FEU Institute of Technology | All Rights Reserved
+            &copy; 2025 FEU Institute of Technology  | All Rights Reserved
         </div>
     </footer>
     </div>
