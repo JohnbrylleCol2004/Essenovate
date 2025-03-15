@@ -461,7 +461,6 @@ input, textarea {
     color: #ffffff;
     text-decoration: underline;
 }
-
 .footer-section p {
     color: #FFEAC5;
 }
@@ -496,16 +495,15 @@ input, textarea {
 }
 
 .footer-section ul li a:hover {
-    color: #FFD700;
+    color: #ffffff;
     text-decoration: underline;
 }
 
 
 .footer-section ul li a:hover {
-    color: #FFD700;
+    color: #ffffff;
     text-decoration: underline;
 }
-
 .social-icons a {
     margin: 0 10px;
     color: #b9975c;
