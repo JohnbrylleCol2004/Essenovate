@@ -34,17 +34,6 @@ $(document).ready(function () {
         $("#" + $(this).data("category")).addClass("active");
     });
 
-    $("#signupModal").hide();
-
-    $("#orderForm").on("submit", function (event) {
-        event.preventDefault();
-        $("#signupModal").fadeIn(); 
-    });
-
-    $(".custom-close").on("click", function () {
-        $("#signupModal").fadeOut();
-    });
-
     $("#paymentAmount").on("input", function () {
         let total = parseFloat($("#totalPrice").text().replace("₱", "")) || 0;
         let payment = parseFloat($(this).val()) || 0;
@@ -59,15 +48,17 @@ $(document).ready(function () {
         }
     });
 
-    $("#confirmOrder").on("click", function () {
+    $("#orderForm").on("submit", function (event) {
+        event.preventDefault();
+
+        const fullName = $.trim($("#fullName").val());
         const email = $.trim($("#email").val());
-        const password = $.trim($("#password").val());
         const homeAddress = $.trim($("#homeAddress").val());
         const payment = parseFloat($("#paymentAmount").val()) || 0;
         const total = parseFloat($("#totalPrice").text().replace("₱", "")) || 0;
 
-        if (email === "" || password === "" || homeAddress === "") {
-            alert("Please enter your email, password, and address to proceed.");
+        if (fullName === "" || email === "" || homeAddress === "") {
+            alert("⚠ Please fill in all your personal details to proceed.");
             return;
         }
 
@@ -76,15 +67,65 @@ $(document).ready(function () {
             return;
         }
 
-        alert(`✅ Order confirmed!\nTotal: ${$("#totalPrice").text()}\nChange: ₱${(payment - total).toFixed(2)}\nEmail: ${email}\nAddress: ${homeAddress}`);
+        // Build the sales invoice content
+        let invoiceContent = `
+        <p><strong>👤 Name:</strong> ${fullName}</p>
+        <p><strong>✉ Email:</strong> ${email}</p>
+        <p><strong>📍 Address:</strong> ${homeAddress}</p>
+        <h3>🛒 Order Summary:</h3>
+        <hr>`;
 
-        $("#signupModal").fadeOut();
+        $(".quantity").each(function () {
+            let price = parseInt($(this).data("price")) || 0;
+            let quantity = parseInt($(this).val()) || 0;
+            let itemName = $(this).closest("tr").find("td:first").text().split(" - ")[0];
 
-        $(".quantity").val(""); 
-        $("#email, #password, #homeAddress, #paymentAmount").val(""); 
-        $("#totalPrice, #servicecharge, #deliveryfee, #changeAmount").text("₱0.00"); 
+            if (quantity > 0) {
+                invoiceContent += `<p>📌 ${itemName} - ${quantity}x = ₱${price * quantity}</p>`;
+            }
+        });
+
+        invoiceContent += `
+        <hr>
+        <p><strong>💰 Total:</strong> ${$("#totalPrice").text()}</p>
+        <p><strong>💵 Payment:</strong> ₱${payment.toFixed(2)}</p>
+        <p><strong>🔄 Change:</strong> ₱${(payment - total).toFixed(2)}</p>
+        <hr>
+        <p>✅ Thank you for your order!</p>`;
+
+        // Show the invoice in the modal
+        $("#invoiceDetails").html(invoiceContent);
+        $("#invoiceModal").fadeIn();
+
+        // Reset form after order is placed
+        $(".quantity").val("");
+        $("#fullName, #email, #homeAddress, #paymentAmount").val("");
+        $("#totalPrice, #servicecharge, #deliveryfee, #changeAmount").text("₱0.00");
+        $("#paymentAmount").attr("placeholder", `Enter at least ₱${overall.toFixed(2)}`);
         $(".subtotal").text("₱0");
         $("#error-msg").hide();
+    });
+
+    // Close modal functionality
+    $(".close, #closeInvoice").on("click", function () {
+        $("#invoiceModal").fadeOut();
+
+        $(".quantity").val("");
+        $("#fullName, #email, #homeAddress, #paymentAmount").val("");
+        $("#totalPrice, #servicecharge, #deliveryfee, #changeAmount").text("₱0.00");
+        $(".subtotal").text("₱0");
+        $("#error-msg").hide();
+    
+        updateTotal();
+
+
+    });
+
+    // Close modal when clicking outside
+    $(window).on("click", function (event) {
+        if ($(event.target).is("#invoiceModal")) {
+            $("#invoiceModal").fadeOut();
+        }
     });
 });
 

@@ -17,9 +17,9 @@
     width: 90%;
     margin: 20px auto;
     padding: 20px;
-    background: wheat;
+    background: #FFEAC5;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 1.5);
     text-align: center;
     font-size: x-large;
 }
@@ -36,10 +36,30 @@
     text-align: center;
 }
 
-.order-form input {
-    width: 60px;
-    padding: 5px;
+.order-form td input.quantity {
+    width: 70px; 
     text-align: center;
+    display: block; 
+    margin: auto; 
+}
+
+
+.order-form h3 {
+    padding: 10px;
+}
+
+.order-form input {
+    width: calc(100% - 160px);
+    padding: 8px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.order-form label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+    text-align: left;
 }
 
 .order-form button {
@@ -69,11 +89,11 @@ pop up */
 }
 
 .modal {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -87,16 +107,22 @@ pop up */
 }
 
 .modal-content {
-    background-color: white;
+    background-color: #FFEAC5;
     padding: 20px;
     border-radius: 10px;
-    width: 600px;
+    width: 400px;
     max-width: 90%; 
     max-height: 80vh; 
     text-align: center;
-    margin: 15% auto;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
 .close {
     float: right;
     font-size: 40px;
@@ -181,6 +207,17 @@ button {
     pointer-events: none; 
 }
 
+.category-btn.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px; 
+    width: 80%;
+    height: 3px;
+    background-color: white; 
+    transform: translateX(-50%);
+}
+
 /*style of X button*/
 .custom-close {
     position:static;
@@ -219,12 +256,15 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: block;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-content {
     flex: 1;
+    min-height: 100vh;
 }
 
 .headerbar{
@@ -662,22 +702,13 @@ html, body {
 /* end of loading screen*/
 
 
-
-/* Responsive */
-@media (max-width: 600px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-
 /* Responsive Design */
 @media (max-width: 600px) {
     .footer-content {
         flex-direction: column;
         align-items: center;
     }
+    
 }
 
 @media (max-width: 768px) {
@@ -711,6 +742,26 @@ html, body {
         cursor: pointer;
     }
     
+    .order-form {
+        width: 90%; /* Adjust width for better fit */
+        margin: 20px auto; /* Center the invoice */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .order-form table {
+        width: 100%; /* Ensure table fits well */
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px; /* Smaller pop-up width for mobile */
+    }
+
+
 
 
 }
@@ -729,6 +780,27 @@ html, body {
     .btn {
         font-size: 14px; /* Make buttons more touch-friendly */
     }
+
+    .order-form {
+        width: 90%; /* Adjust width for better fit */
+        margin: 20px auto; /* Center the invoice */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .order-form table {
+        width: 100%; /* Ensure table fits well */
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px; /* Smaller pop-up width for mobile */
+    }
+
+    
 }
 
 
@@ -827,6 +899,38 @@ html, body {
     .headerbar .account ul {
         justify-content: space-between;
     }
+
+    .category-buttons {
+        flex-wrap: wrap;
+    }
+
+    .category-btn {
+        font-size: 14px; /* Smaller text */
+        padding: 8px 12px;
+    }
+
+    .category-btn.active::after {
+        width: 90%;
+    }
+    .order-form {
+        width: 90%; /* Adjust width for better fit */
+        margin: 20px auto; /* Center the invoice */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .order-form table {
+        width: 100%; /* Ensure table fits well */
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px; /* Smaller pop-up width for mobile */
+    }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -854,6 +958,25 @@ html, body {
 
     .main_slide .slideshow-container{
         width:70vw;
+    }
+
+    .order-form {
+        width: 90%; /* Adjust width for better fit */
+        margin: 20px auto; /* Center the invoice */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .order-form table {
+        width: 100%; /* Ensure table fits well */
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px; /* Smaller pop-up width for mobile */
     }
 }
 
@@ -958,4 +1081,24 @@ html, body {
     .headerbar .account ul {
         justify-content: space-between;
     }
+
+    .order-form {
+        width: 90%; /* Adjust width for better fit */
+        margin: 20px auto; /* Center the invoice */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .order-form table {
+        width: 100%; /* Ensure table fits well */
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px; /* Smaller pop-up width for mobile */
+    }
+
 }
