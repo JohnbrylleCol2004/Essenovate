@@ -4,7 +4,17 @@ const serviceCards = document.querySelectorAll('.card');
 const leftArrow = document.querySelector('.arrow.left');
 const rightArrow = document.querySelector('.arrow.right');
 
+
+
 let currentIndex = 0;
+
+
+function hideLoadingScreen() {
+    setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.display = 'none';
+    }, 3000);
+}
 
 // Function to slide only the images
 function showSlide(newIndex, direction) {
