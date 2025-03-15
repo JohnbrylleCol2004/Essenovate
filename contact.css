@@ -252,9 +252,8 @@ html, body {
 }
 
 .account ul li i:hover {
-    color: #6C4E31;
+    color:#a55a13;
 }
-
 .search {
     display: none;
     width: 200px;
@@ -496,16 +495,15 @@ input, textarea {
 }
 
 .footer-section ul li a:hover {
-    color: #FFD700;
+    color: #ffffff;
     text-decoration: underline;
 }
 
 
 .footer-section ul li a:hover {
-    color: #FFD700;
+    color: #ffffff;
     text-decoration: underline;
 }
-
 .social-icons a {
     margin: 0 10px;
     color: #b9975c;
@@ -525,19 +523,7 @@ input, textarea {
     border-top: 2px solid #FFEAC5;
     font-size: 12px;
     opacity: 0.8;
-}
-@media screen and (max-width: 768px) {
-    .carousel-container {
-        height: auto; /* Allow it to adjust dynamically */
-    }
-
-    .carousel img {
-        width: 100%; /* Make images fit the screen */
-        max-width: 100vw; /* Ensure no overflow */
-        height: auto;
-        object-fit: contain; /* Maintain aspect ratio */
-    }
-}
+}   
 
 @media (max-width: 600px) {
     .footer-content {
@@ -561,7 +547,7 @@ input, textarea {
     .search {
         display: flex;
         align-items: center;
-        border: 1px solid #6C4E31;
+        border: 1px solid  #663406;
         padding: 5px;
         border-radius: 5px;
         background-color: #ffffff;
@@ -595,13 +581,16 @@ input, textarea {
         width: 100%;
         bottom: 0;
         right: -100%;
-        background-color:  #FFDBB5;
+        background-color: #FFEAC5;
         transition: right 0.5s ease;
+        overflow-y: auto;
+        
     }
 
     .headerbar .account, .headerbar .nav {
         display: block;
         font-size: 18px;
+        
     }
 
     .bar .fa-xmark {
@@ -610,7 +599,11 @@ input, textarea {
         right: 5vw;
         position:absolute;
         font-size: 25px;
+        
     }
+
+    
+
 
     .headerbar .nav ul {
         flex-direction: column;
@@ -619,10 +612,12 @@ input, textarea {
     }
 
     .headerbar .nav li {
+        color:#663406;
+        font-size: larger;
         width: 96vw;
         margin: 10px 0;
         padding: 15px 30px;
-        background-color: #f2dab2 ;
+        background-color:  #FFEAC5 ;
         box-shadow: 0 2px 5px rgb(135, 107, 107);
         font-size: 15px;
         margin-top: 5px;
@@ -637,7 +632,7 @@ input, textarea {
     .headerbar .account {
         line-height: 40px;
         margin-top: 60px;
-        background-color:  #e0b983;
+        background-color: #663406;
         box-shadow: 0 2px 15px rgb(135, 107, 107);
         padding: 15px;
     }
