@@ -539,6 +539,7 @@ input, textarea {
         align-items: center;
     }
 }
+
 @media only screen and (max-width: 879px) {
     .header .nav, .header .account {
         display: none;
@@ -641,6 +642,7 @@ input, textarea {
         justify-content: space-between;
     }
 }
+
 
 @media (max-width: 768px) {
     .map-container {
