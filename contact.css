@@ -36,7 +36,7 @@ html, body {
 
         .coffee-cup {
             position: relative;
-            right: -80px;
+            right: -60px;
             width: 100px; /* Slightly smaller width for a tea cup */
             height: 80px; /* Shorter height for a tea cup */
             background:#663406; /* Lighter color for a tea cup */
@@ -148,7 +148,7 @@ html, body {
 
 
         .loading-text {
-            font-size: 24px; /* Adjust font size as needed */
+            font-size: 20px; /* Adjust font size as needed */
             color: #663406; /* Color of the text */
             text-align: center; /* Center the text */
             margin-top: 20px; /* Space above the text */
