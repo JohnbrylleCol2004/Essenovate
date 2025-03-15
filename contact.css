@@ -36,7 +36,7 @@ html, body {
 
         .coffee-cup {
             position: relative;
-            right: -60px;
+            right: -57px;
             width: 100px; /* Slightly smaller width for a tea cup */
             height: 80px; /* Shorter height for a tea cup */
             background:#663406; /* Lighter color for a tea cup */
