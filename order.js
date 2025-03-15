@@ -21,6 +21,8 @@ $(document).ready(function () {
         $("#totalPrice").text(`₱${overall.toFixed(2)}`);
         $("#servicecharge").text(`₱${serviceCharge.toFixed(2)}`);
         $("#deliveryfee").text(`₱${deliveryFee.toFixed(2)}`);
+
+        $("#paymentAmount").attr("placeholder", `Enter at least ₱${overall.toFixed(2)}`);
     }
 
     $(".quantity").on("input", updateTotal);
@@ -32,45 +34,104 @@ $(document).ready(function () {
         $("#" + $(this).data("category")).addClass("active");
     });
 
-    $("#signupModal").hide();
+    $("#paymentAmount").on("input", function () {
+        let total = parseFloat($("#totalPrice").text().replace("₱", "")) || 0;
+        let payment = parseFloat($(this).val()) || 0;
+        let change = payment - total;
+
+        if (change >= 0) {
+            $("#changeAmount").text(`₱${change.toFixed(2)}`);
+            $("#error-msg").hide();
+        } else {
+            $("#changeAmount").text("₱0");
+            $("#error-msg").show();
+        }
+    });
 
     $("#orderForm").on("submit", function (event) {
         event.preventDefault();
-        $("#signupModal").fadeIn(); 
-    });
 
-    $(".custom-close").on("click", function () {
-        $("#signupModal").fadeOut();
-    });
-
-    $("#confirmOrder").on("click", function () {
+        const fullName = $.trim($("#fullName").val());
         const email = $.trim($("#email").val());
-        const password = $.trim($("#password").val());
         const homeAddress = $.trim($("#homeAddress").val());
+        const payment = parseFloat($("#paymentAmount").val()) || 0;
+        const total = parseFloat($("#totalPrice").text().replace("₱", "")) || 0;
 
-        if (email === "" || password === "" || homeAddress === "") {
-            alert("Please enter your email, password, and address to proceed.");
+        if (fullName === "" || email === "" || homeAddress === "") {
+            alert("⚠ Please fill in all your personal details to proceed.");
             return;
         }
 
-        alert(`Order confirmed!\nTotal: ${$("#totalPrice").text()}\nEmail: ${email}\nAddress: ${homeAddress}`);
+        if (payment < total) {
+            alert("⚠ Payment is insufficient! Please enter a valid amount.");
+            return;
+        }
 
-      
-        $("#signupModal").fadeOut();
+        // Build the sales invoice content
+        let invoiceContent = `
+        <p><strong>👤 Name:</strong> ${fullName}</p>
+        <p><strong>✉ Email:</strong> ${email}</p>
+        <p><strong>📍 Address:</strong> ${homeAddress}</p>
+        <h3>🛒 Order Summary:</h3>
+        <hr>`;
 
-        
-        $(".quantity").val(""); 
-        $("#email, #password, #homeAddress").val(""); 
-        $("#totalPrice, #servicecharge, #deliveryfee").text("₱0.00"); 
-        $(".subtotal").text("₱0"); 
+        $(".quantity").each(function () {
+            let price = parseInt($(this).data("price")) || 0;
+            let quantity = parseInt($(this).val()) || 0;
+            let itemName = $(this).closest("tr").find("td:first").text().split(" - ")[0];
+
+            if (quantity > 0) {
+                invoiceContent += `<p>📌 ${itemName} - ${quantity}x = ₱${price * quantity}</p>`;
+            }
+        });
+
+        invoiceContent += `
+        <hr>
+        <p><strong>💰 Total:</strong> ${$("#totalPrice").text()}</p>
+        <p><strong>💵 Payment:</strong> ₱${payment.toFixed(2)}</p>
+        <p><strong>🔄 Change:</strong> ₱${(payment - total).toFixed(2)}</p>
+        <hr>
+        <p>✅ Thank you for your order!</p>`;
+
+        // Show the invoice in the modal
+        $("#invoiceDetails").html(invoiceContent);
+        $("#invoiceModal").fadeIn();
+
+        // Reset form after order is placed
+        $(".quantity").val("");
+        $("#fullName, #email, #homeAddress, #paymentAmount").val("");
+        $("#totalPrice, #servicecharge, #deliveryfee, #changeAmount").text("₱0.00");
+        $("#paymentAmount").attr("placeholder", `Enter at least ₱${overall.toFixed(2)}`);
+        $(".subtotal").text("₱0");
+        $("#error-msg").hide();
+    });
+
+    // Close modal functionality
+    $(".close, #closeInvoice").on("click", function () {
+        $("#invoiceModal").fadeOut();
+
+        $(".quantity").val("");
+        $("#fullName, #email, #homeAddress, #paymentAmount").val("");
+        $("#totalPrice, #servicecharge, #deliveryfee, #changeAmount").text("₱0.00");
+        $(".subtotal").text("₱0");
+        $("#error-msg").hide();
+    
+        updateTotal();
+
+
+    });
+
+    // Close modal when clicking outside
+    $(window).on("click", function (event) {
+        if ($(event.target).is("#invoiceModal")) {
+            $("#invoiceModal").fadeOut();
+        }
     });
 });
 
 
+
 // end of order script
-
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const searchicon1 = document.querySelector('#searchicon1');
@@ -148,3 +209,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+function hideLoadingScreen() {
+    setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.display = 'none';
+    }, 3000); // 3-second delay
+}
