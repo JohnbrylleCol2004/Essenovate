@@ -252,9 +252,8 @@ html, body {
 }
 
 .account ul li i:hover {
-    color: #6C4E31;
+    color:#a55a13;
 }
-
 .search {
     display: none;
     width: 200px;
@@ -462,6 +461,7 @@ input, textarea {
     color: #ffffff;
     text-decoration: underline;
 }
+
 .footer-section p {
     color: #FFEAC5;
 }
