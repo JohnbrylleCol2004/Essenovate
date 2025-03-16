@@ -313,8 +313,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     gap: 50px;
-    margin: 30px auto;
-    padding: 10px;
+    margin: 20px auto;
 }
 .contact-container h3{
     display: flex;
@@ -383,11 +382,11 @@ html, body {
 input, textarea {
     width: 100%;
     max-width: 600px; /* Prevents stretching on large screens */
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #6C4E31; /* Adds a slight border for visibility */
     border-radius: 5px;
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     border: none;
 }
 
