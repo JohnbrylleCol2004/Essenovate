@@ -71,3 +71,11 @@ function nextSlide() {
     currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
     updateContent(currentIndex);
 }
+
+function hideLoadingScreen() {
+    setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.display = 'none';
+    }, 3000);
+}
+
