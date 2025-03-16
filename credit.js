@@ -77,3 +77,4 @@ function hideLoadingScreen() {
         loadingScreen.style.display = 'none';
     }, 3000); // 3-second delay
 }
+

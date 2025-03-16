@@ -554,3 +554,40 @@ h1 {
         justify-content: space-between;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .credit-section {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .credit-item {
+        flex-direction: column; /* Stack image and text vertically */
+        width: 90%; /* Adjust width for better mobile fit */
+        text-align: center; /* Center align content */
+    }
+
+    .credit-item img {
+        width: 80%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center image */
+        margin-bottom: 15px; /* Add spacing */
+    }
+
+    .credit-text {
+        width: 100%;
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .credit-text p {
+        font-size: 12px; /* Slightly smaller text */
+    }
+
+    .credit-text h2 {
+        font-size: 18px;
+    }
+
+    .credit-text a {
+        font-size: 14px;
+    }
+}
