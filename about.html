@@ -3,10 +3,10 @@
     <head>
         <title></title>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="about.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         </head>
     <body>
         <header>
@@ -60,12 +60,14 @@
                 </div>
     
                 <div class="logo">
-                    <img src="./About_us/logo.png" alt="logo">
-                </div>
+                <a href="index.html">
+                    <img src="./image/new_logo.png" alt="logo">
+                </a>
+            </div>
     
                 <div class="bar">
                     <i class="fa-solid fa-bars"></i>
-                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-solid fa-xmark" id="hdcross"></i>
                 </div>
     
                 <nav class="nav">
@@ -98,11 +100,11 @@
                 <div class="carousel">
                     <button class="carousel-btn left" onclick="prevSlide()">&#9664;</button>
                     <div class="carousel-images">
-                        <div class="carousel-image active"> <img src="./About_us/col.jpg" alt="">
+                        <div class="carousel-image active"> <img src="./image/col.jpg" alt="">
                         </div>
-                        <div class="carousel-image"><img src="./About_us/zai.jpg" alt="">
+                        <div class="carousel-image"><img src="./image/zai.jpg" alt="">
                         </div>
-                        <div class="carousel-image"><img src="./About_us/jethro.jpg" alt="">
+                        <div class="carousel-image"><img src="./image/jethro.jpg" alt="">
                         </div>
                     </div>
                     <button class="carousel-btn right" onclick="nextSlide()">&#9654;</button>
@@ -119,25 +121,26 @@
                     <p><strong>Email:</strong> <span id="person-email">developer@example.com</span></p>
                 </div>
                 <div class="social-icons">
-                    <a href="#" target="_blank" id="facebook-link"><i class="fa-brands fa-square-facebook"></i></a>
-                    <a href="#" target="_blank" id="instagram-link"><i class="fa-brands fa-square-instagram"></i></a>
-                    <a href="#" target="_blank" id="github-link"><i class="fa-brands fa-square-github"></i></a>
-                    <a href="#" target="_blank" id="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com" target="_blank" id="facebook-link"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" id="instagram-link"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" id="github-link"><i class="fa-brands fa-square-github"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" id="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
     
-            
-        
             <!-- Vision & Mission Section -->
             <div class="vision-mission">
                 <div class="section-group">
                     <h1>Our Vision:<br></h1>
-                    <p>To innovate and lead in the industy delivering top-quality solutions...<br><br><br></p>
+                    <p>To be the premier one-stop hub for both high-quality printing services and convenient online food ordering, seamlessly blending creativity and comfort to serve our customers' diverse needs.<br><br><br></p>
                 </div>
             
                 <div class="section-group">
                     <h1>Our Mission:<br></h1>
-                    <p>To provide customers with the best experience and drive positive impact...</p>
+                    <p>Our mission is to provide high-quality printing services and a convenient online food ordering experience in one seamless platform. We are committed to delivering precise, professional prints while offering a satisfying selection of hot and cold drinks and delicious sandwiches. By combining efficiency, innovation, and customer-focused service, we aim to create a space where productivity and comfort come together, ensuring every interaction is convenient, enjoyable, and valuable.<br><br><br></p>
+                </div>
+                <div class="section-group">
+                    <button class="credits-button" onclick="goToCredits()">Credits</button>
                 </div>
             </div>  
         </div>
@@ -153,24 +156,25 @@
                 <div class="footer-section links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="Service.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section social">
                     <h4>Follow Us</h4>
                     <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/FEUTechOfficial/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com/i/flow/login?redirect_after_login=%2Ffeutechofficial"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/feutech_official/?hl=en"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2025 Your Company | All Rights Reserved
+                &copy; 2025 FEU Institute of Technology  | All Rights Reserved
             </div>
+    
         </footer>
 
  <script src="about.js"></script>
