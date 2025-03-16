@@ -5,7 +5,7 @@
     list-style: none;
     text-decoration: none;
     color: black;
-    font-family: 'Sodo Sans', 'Lander', 'pike';
+    font-family:'Times New Roman', Times, serif
     
 }
 
@@ -136,6 +136,8 @@
 
 
 .loading-text {
+    position: relative;
+    margin-left: 20px;
     font-size: 24px; /* Adjust font size as needed */
     color: #663406; /* Color of the text */
     text-align: center; /* Center the text */
@@ -189,9 +191,7 @@ body {
     background-color: #FFEAC5; /* Same as .home */
     height: 100vh;
     width: 100vw;
-    min-width: 50%;
 }
-
 
 html, body {
     overflow-x: hidden;
@@ -226,7 +226,6 @@ html, body {
     background-color: #FFEAC5;
     border-bottom: 2px solid #6C4E31;
     box-shadow: 0 2px 20px #FFDBB5;
-    
 }
 
 .nav ul {
@@ -348,32 +347,11 @@ html, body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.container {
+.container1 {
     display: flex;
-    justify-content: center;
     gap: 50px;
     padding: 50px;
     box-sizing: border-box;
-}
-
-/* Image container */
-.image-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-/* Image */
-.image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .vision-mission {
