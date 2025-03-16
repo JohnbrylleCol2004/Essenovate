@@ -217,6 +217,14 @@ html, body {
     display: block;
 }
 
+.srchicon {
+    background-color:#663406;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -531,7 +539,7 @@ html, body {
     color: #663406;
     font-size: 24px;
     text-decoration: none;
-    transition: transform 0.3s;
+    transition: transform 0.3s; 
 }
 
 /* Responsive Design */
