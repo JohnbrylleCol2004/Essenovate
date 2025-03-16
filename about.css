@@ -651,7 +651,6 @@ html, body {
 
     .headerbar .nav ul {
         flex-direction: column;
-        padding: 20px;
         margin-top: 10px;
         text-align: center;
     }
