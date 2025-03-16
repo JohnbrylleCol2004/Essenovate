@@ -26,8 +26,8 @@ const data = [
         title: "About Me",
         description: "A dedicated and passionate programmer constantly exploring new ways to create impactful applications. As a second-year IT student at FEU Institute of Technology, I’ve been honing my skills in software development, web design, and system architecture. I take pride in writing clean, efficient code and enjoy turning ideas into fully functional, user-friendly solutions.",
         name: "Don Zaimone Miranda",
-        age: "28",
-        email: "zai@example.com",
+        age: "19",
+        email: "202310159@fit.edu.ph",
         social: {
             facebook: "https://www.facebook.com/profile.php?id=100042834517769",
         }
@@ -36,11 +36,21 @@ const data = [
         title: "About Me",
         description: "An  aspiring backend developer from FEU Tech, currently in my 2nd year of IT. I love solving complex problems and thrive on challenges, especially in backend development and web design. Optimizing website functionality and writing clean, efficient code are my passions. I continuously learn new technologies to improve my skills. My goal is to build user-friendly websites and functional systems that solve users' problems.",
         name: "Jethro Wang",
-        age: "32",
-        email: "jethro@example.com",
+        age: "20",
+        email: "202311220@fit.edu.ph",
         social: {
             facebook: "https://www.facebook.com/jethro.wang.94",
             instagram: "https://www.instagram.com/jethro.wang.94?igsh=MWp6bjhyOGJ2OXhnZQ==",
+        }
+    },
+    {
+        title: "About Me",
+        description: "I am a dedicated and passionate Web and Mobile student currently in my second year at FEU Institute of Technology. Striving to be good at programming, I am eager to learn more about the ever-evolving world of technology, constantly seeking opportunities to enhance my skills and deepen my understanding of coding. My goal is to improve continuously, mastering various programming languages and frameworks to become a proficient developer in the future. With a strong determination to grow, I embrace challenges as learning experiences and aspire to create impactful and innovative digital solutions.",
+        name: "John Louise Ereso",
+        age: "21",
+        email: "202311200@fit.edu.ph",
+        social: {
+            facebook: "https://www.facebook.com/johnlouise.ereso",
         }
     }
 ];
@@ -128,7 +138,7 @@ cross.addEventListener('click', function() {
 
 
 function goToCredits() {
-    window.location.href = "credits.html"; // Change this to the actual credits page URL
+    window.location.href = "credit.html"; // Change this to the actual credits page URL
 }
 
 function hideLoadingScreen() {
