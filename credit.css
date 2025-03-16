@@ -316,30 +316,71 @@ h1 {
     justify-content: center;
     gap: 10px;
     margin-left: 20px;
-    &:hover {
-        transition: 0.5s ease;
-        background-color: #663406;
-    }
+    transition: 0.5s ease; /* Moved outside hover to ensure smooth transition */
 }
 
-.credit-text p {
-    font-size: 14px;
-    font-weight: bold;
+.credit-text:hover {
+    background-color: #663406;
 }
 
-.credit-text h2 {
-    font-size: 20px;
-    font-weight: bold;
+/* Change text color inside credit-text when hovered */
+.credit-text:hover p,
+.credit-text:hover h2,
+.credit-text:hover a {
+    color: white;
 }
 
+/* Ensure link color also changes back on hover */
 .credit-text a {
     color: black;
     text-decoration: none;
     font-size: 16px;
-     &:hover {
-        color: #FFDBB5;
-     }
+    transition: color 0.5s ease;
 }
+
+.credit-text a:hover {
+    color: #FFDBB5; /* Keeps the hover effect for links */
+}
+.credit-about {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically if needed */
+    margin-top: 60px;
+}
+
+.credit-about a {
+    width: fit-content; /* Adjusts width based on content */
+    padding: 20px;
+    background-color: #663406;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #FFDBB5;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.credit-about a:hover {
+    background-color: #FFDBB5;
+    color: #663406;
+}
+
+/* Add an arrow when hovered (on the left side) */
+.credit-about a::before {
+    content: "← "; 
+    opacity: 0; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(5px); 
+    position: relative;
+}
+
+.credit-about a:hover::before {
+    opacity: 1; 
+    transform: translateX(-5px); 
+}
+
 
 .footer {
     position: relative;
