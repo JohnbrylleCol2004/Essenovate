@@ -16,8 +16,8 @@ const data = [
         title: "About Me",
         description: "Lorem ipsum for col.jpg...",
         name: "John Brylle Col",
-        age: "30",
-        email: "col@example.com",
+        age: "20",
+        email: "202310280@fit.edu.ph",
         social: {
             facebook: "https://www.facebook.com/jeybi.col",
         }
