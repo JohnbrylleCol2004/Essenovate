@@ -665,7 +665,7 @@ input:focus, textarea:focus {
 
     .contact-info {
         width: 90%; /* Prevents it from being too wide */
-        padding: 30px 20px; /* Adjust padding for better fit */
+        padding: 10px 10px; /* Adjust padding for better fit */
         display: flex;
         flex-direction: column;
         align-items: center;
