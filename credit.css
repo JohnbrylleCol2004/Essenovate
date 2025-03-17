@@ -315,21 +315,20 @@ h1 {
 .credit-text {
     display: flex;
     flex-direction: column;
-    max-height: 200px; /* Adjust height as needed */
-    overflow-y: auto; 
+    max-height: 30vh; /* Sets height to 30% of the viewport height */
+    min-height: 150px; /* Ensures it's not too small on small screens */
+    overflow-y: auto; /* Enables scrolling */
     padding: 10px;
-    background-color: #fbd4a4; 
-    border-radius: 5px; 
-    font-size: 14px; 
-    line-height: 1.5; 
-    width: 90%; 
+    background-color: #fbd4a4;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    width: 90%;
 }
 
 .credit-text:hover {
     background-color: #663406;
 }
-
-
 
 /* Change text color inside credit-text when hovered */
 .credit-text:hover p,
