@@ -1,13 +1,91 @@
-const carousel = document.querySelector('.carousel');
-const images = carousel.querySelectorAll('img');
-const serviceCards = document.querySelectorAll('.card'); 
-const leftArrow = document.querySelector('.arrow.left');
-const rightArrow = document.querySelector('.arrow.right');
+document.querySelectorAll('.toggle-button').forEach(button => {
+    button.addEventListener('click', function () {
+        const card = this.closest('.card');
+        const details = card.querySelector('.details');
 
+        if (details.classList.contains('open')) {
+            details.classList.remove('open');
+            this.textContent = 'Read More';
+            card.classList.remove('expanded');
+        } else {
+            // Close all other expanded cards before opening the new one
+            document.querySelectorAll('.card.expanded').forEach(expandedCard => {
+                expandedCard.classList.remove('expanded');
+                expandedCard.querySelector('.details').classList.remove('open');
+                expandedCard.querySelector('.toggle-button').textContent = 'Read More';
+            });
 
+            details.classList.add('open');
+            this.textContent = 'Read Less';
+            card.classList.add('expanded');
 
-let currentIndex = 0;
+            // Ensure the card is fully visible
+            setTimeout(() => {
+                const cardBottom = card.getBoundingClientRect().bottom;
+                const viewportHeight = window.innerHeight;
+                
+                if (cardBottom > viewportHeight) {
+                    window.scrollTo({
+                        top: card.offsetTop - 50, // Adjust scrolling to bring it fully into view
+                        behavior: 'smooth'
+                    });
+                }
+            }, 300);
+        }
+    });
+});
 
+document.addEventListener('DOMContentLoaded', () => {
+    const searchicon1 = document.querySelector('#searchicon1');
+    const searchicon2 = document.querySelector('#searchicon2');
+    const searchinput1 = document.querySelector('#searchinput1');
+    const searchinput2 = document.querySelector('#searchinput2');
+
+    // Toggle visibility of search input when clicking on search icon 1
+    searchicon1.addEventListener('click', function() {
+        toggleSearch(searchinput1);
+        // Hide the second search bar if it's visible
+        if (searchinput2.style.display === 'flex') {
+            searchinput2.style.display = 'none';
+        }
+    });
+
+    // Toggle visibility of search input when clicking on search icon 2
+    searchicon2.addEventListener('click', function() {
+        toggleSearch(searchinput2);
+        // Hide the first search bar if it's visible
+        if (searchinput1.style.display === 'flex') {
+            searchinput1.style.display = 'none';
+        }
+    });
+
+    // Function to toggle the visibility of the search input
+    function toggleSearch(searchInput) {
+        if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+            searchInput.style.display = 'flex';
+        } else {
+            searchInput.style.display = 'none';
+        }
+    }
+});
+
+// Sidebar toggle
+const bar = document.querySelector('.fa-bars');
+const cross = document.querySelector('#hdcross');
+const headerbar = document.querySelector('.headerbar');
+
+bar.addEventListener('click', function() {
+    setTimeout(() => {
+        cross.style.display = 'block'; 
+        cross.style.zIndex = '2';
+    }, 200);
+    headerbar.style.right = '0';
+});
+
+cross.addEventListener('click', function() {
+    cross.style.display = 'none';  // Hide the cross icon when clicked
+    headerbar.style.right = '-100%'; // Slide out to the right
+});
 
 function hideLoadingScreen() {
     setTimeout(() => {
@@ -15,54 +93,3 @@ function hideLoadingScreen() {
         loadingScreen.style.display = 'none';
     }, 3000);
 }
-
-// Function to slide only the images
-function showSlide(newIndex, direction) {
-    const currentImage = images[currentIndex];
-    const nextImage = images[newIndex];
-
-    // Ensure only the current image is visible
-    images.forEach((img, i) => img.style.display = i === newIndex ? 'block' : 'none');
-
-    // Apply transition animation for images
-    nextImage.style.transform = direction === 'right' ? 'translateX(100%)' : 'translateX(-100%)';
-
-    setTimeout(() => {
-        currentImage.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s';
-        nextImage.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s';
-
-        currentImage.style.transform = direction === 'right' ? 'translateX(-100%)' : 'translateX(100%)';
-        nextImage.style.transform = 'translateX(0)';
-    }, 10);
-
-    currentIndex = newIndex;
-
-    // Instantly switch service card (no transition)
-    showCard(newIndex);
-}
-
-// Function to instantly switch service cards
-function showCard(index) {
-    serviceCards.forEach((card, i) => {
-        card.style.display = i === index ? 'block' : 'none'; // Instant switch, no transition
-    });
-}
-
-// Next and Previous Slide Functions
-function nextSlide() {
-    let newIndex = (currentIndex + 1) % images.length;
-    showSlide(newIndex, 'left');
-}
-
-function prevSlide() {
-    let newIndex = (currentIndex - 1 + images.length) % images.length;
-    showSlide(newIndex, 'right');
-}
-
-// Event Listeners for Arrows
-leftArrow.addEventListener('click', prevSlide);
-rightArrow.addEventListener('click', nextSlide);
-
-// Ensure only the first image and service card are visible on page load
-images.forEach((img, i) => img.style.display = i === 0 ? 'block' : 'none');
-showCard(0);
