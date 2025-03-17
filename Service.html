@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vitality Tea</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="service.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
     <body onload="hideLoadingScreen()">
-        
-        <div id="loading-screen">
-        <div class="container1">
-            <div class="steam">
-                <div class="steam steam-1"></div>
-                    <div class="steam steam-2"></div>
-                    <div class="steam steam-3"></div>
-            </div>
-            <div class="coffee-cup">
-                <div class="handle"></div>
-            </div>
-            <div class="loading-text">Brewing your experience...</div>
-        </div>
-    </div>
 
-        
-        <header>
+        <div id="loading-screen">
+            <div class="container1">
+                <div class="steam">
+                    <div class="steam steam-1"></div>
+                        <div class="steam steam-2"></div>
+                        <div class="steam steam-3"></div>
+                </div>
+                <div class="coffee-cup">
+                    <div class="handle"></div>
+                </div>
+                <div class="loading-text">Brewing your experience...</div>
+            </div>
+        </div>
+        <header id="header">
             <div class="header">
                 <div class="headerbar">
                     <div class="account">
@@ -44,7 +46,7 @@
                             </div>
                             <a href="">
                                 <li>
-                                    <i class="fa-solid fa-user"></i>
+                                    <i class="fa-solid fa-user" id="user-mb"></i>
                                 </li>
                             </a>
                         </ul>
@@ -74,18 +76,20 @@
                 </div>
     
                 <div class="logo">
-                    <img src="./About_us/logo.png" alt="logo">
+                    <a href="index.html">
+                        <img src="./About_us/logo.png" alt="logo">
+                    </a>
                 </div>
     
                 <div class="bar">
                     <i class="fa-solid fa-bars"></i>
-                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-solid fa-xmark" id="hdcross"></i>
                 </div>
     
                 <nav class="nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="Service.html">Service</a></li>
+                        <li><a href="service.html">Service</a></li>
                         <li><a href="menu.html">Menu</a></li>
                         <li><a href="order.html">Order</a></li>
                         <li><a href="about.html">About</a></li>
@@ -101,157 +105,134 @@
                             <input type="search" placeholder="Search...">
                             <i class="fa-solid fa-magnifying-glass srchicon"></i>
                         </div>
-                        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                        <li><a href="#"><i class="fa-solid fa-user" id="user-mb"></i></a></li>
                     </ul>
                 </div>
             </div>
         </header>
+        
+        <div class="title">
+            <h1>Our Services</h1>
+        </div>
 
-<div>
-        <div class="service-info">  
-            <div class="image-section">
-                <div class="carousel">
-                    <button class="arrow left">&#10094;</button>
-                    <img src="./About_us/images.jpg" alt="Service Image" class="responsive-img">
-                    <img src="./About_us/bookbind.png" alt="Service Image" class="responsive-img">
-                    <img src="./About_us/laminating.jpg" alt="Service Image" class="responsive-img">
-                    <img src="./About_us/cutting.jpg" alt="Service Image" class="responsive-img">
-                    <button class="arrow right">&#10095;</button>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="content">
-                    <h3 id="Label">Digital Printing</h3>
-                    <div class="columns">
-                        <div class="column left">
-                            <h3>Ink Types:</h3>
-                            <ul>
-                                <li><strong>Toner-based ink</strong><br>Powdered ink fused onto paper using heat.</li>
-                                <li><strong>Inkjet ink</strong><br>Liquid ink sprayed onto paper.</li>
-                                <li><strong>UV-curable ink</strong><br>Cured with UV light for fast drying and durability.</li>
-                                <li><strong>Solvent and Eco-Solvent Ink</strong><br>Used for outdoor signage and banners due to water resistance.</li>
-                            </ul>
-                        </div>
-                        <div class="column right">
-                            <h3>Paper Types:</h3>
-                            <ul>
-                                <li><strong>Coated Paper</strong><br>Glossy, matte, or silk finishes for sharp, vibrant images.</li>
-                                <li><strong>Uncoated Paper</strong><br>More natural, absorbent, and ideal for writing.</li>
-                                <li><strong>Cardstock</strong><br>Thicker, used for business cards, invitations, and postcards.</li>
-                                <li><strong>Specialty Papers</strong><br>Textured, recycled, or synthetic papers for unique projects.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-info">
-                <div class="card">
-                    <div class="content">
-                        <h3 id="Label">Book Binding</h3>
-                        <div class="columns">
-                            <div class="column left">
-                                <h3>Binding Types:</h3>
-                                <ul>
-                                    <li><strong>Toner-based ink</strong><br>Powdered ink fused onto paper using heat.</li>
-                                    <li><strong>Heated Spine (Perfect Binding or Thermal Binding)</strong><br>
-                                        Pages are glued to a spine using a strong, heated adhesive (such as PUR or EVA glue).<br>
-                                        The cover is then wrapped around and pressed firmly until the glue dries.
-                                    </li>
-                                    <li><strong>Wire Binding (Wire-O or Spiral Binding)</strong><br>
-                                        Holes are punched along the edge of the pages, and a metal wire or plastic spiral is 
-                                        inserted to hold them together.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="service-info">
-                <div class="card">
-                    <div class="content">
-                        <h3 id="Label">Laminating</h3>
-                        <div class="columns">
-                            <div class="column right">
-                                <h3>Lamination Types:</h3>
-                                <ul>
-                                    <li><strong>Glossy Lamination</strong><br>Enhances color vibrancy and shine.</li>
-                                    <li><strong>Matte Lamination</strong><br>Offers a smooth, non-glare finish for a premium feel.</li>
-                                    <li><strong>Soft-Touch Lamination</strong><br>Provides a velvety texture, often used for luxury products.</li>
-                                </ul>
-                            </div>
-                            <div class="column right">
-                                <h3>Paper Types:</h3>
-                                <ul>
-                                    <li><strong>UV Coating</strong><br>A liquid coating hardened with UV light for a protective, glossy effect.</li>
-                                    <li><strong>Encapsulation</strong><br>A thicker lamination that seals the edges for complete waterproofing.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="service-info">
-                <div class="card">
-                    <div class="content">
-                        <h3 id="Label">Cutting & Finishing</h3>
-                        <div class="columns">
-                            <div class="column right">
-                                <h3>Finishing Types:</h3>
-                                <ul>
-                                    <li><strong>Straight Cutting</strong><br>Standard trimming for books, flyers, and posters.</li>
-                                    <li><strong>Die Cutting</strong><br>Custom-shaped cutting for unique designs (e.g., rounded business cards, stickers).</li>
-                                </ul>
-                                </div>
-                                <div class="column right">
-                                    <h3>Paper Types:</h3>
-                                    <ul>
-                                        <li><strong>Perforation</strong><br>Creates tear-off sections, commonly used for tickets and coupons.</li>
-                                    <li><strong>Scoring & Creasing</strong><br>Prepares paper for easy folding without cracking.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <main></main>
+        <section class="services">
+    <div class="card">
+        <img src="./About_us/download.png" alt="Digital Printing Logo" class="icon">
+        <h1>Digital Printing</h1>
+        <div class="content">
+            <p style="text-align: center;">
+                <a class="button toggle-button" href="javascript:void(0)">Read More</a>
+            </p>
+            <div class="details">
+                <h3>Ink Types:</h3>
+                <ul>
+                    <li><strong>Toner-based ink</strong> – Powdered ink fused onto paper using heat.</li>
+                    <li><strong>Inkjet ink</strong> – Liquid ink sprayed onto paper.</li>
+                    <li><strong>UV-curable ink</strong> – Cured with UV light for fast drying and durability.</li>
+                    <li><strong>Solvent & Eco-Solvent Ink</strong> – Used for outdoor signage and banners.</li>
+                </ul>
+                <h3>Paper Types:</h3>
+                <ul>
+                    <li><strong>Coated Paper</strong> – Glossy, matte, or silk finishes for sharp images.</li>
+                    <li><strong>Uncoated Paper</strong> – More natural, absorbent, and ideal for writing.</li>
+                    <li><strong>Cardstock</strong> – Thicker, used for business cards and invitations.</li>
+                    <li><strong>Specialty Papers</strong> – Textured, recycled, or synthetic papers.</li>
+                </ul>
             </div>
         </div>
-    </div>  
+    </div>
+
+<!-- Book Binding & Finishing -->
+<div class="card">
+    <img src="./About_us/bookbind.png" alt="Book Binding Logo" class="icon">
+    <h1>Book Binding</h1>
+    <div class="content">
+        <p style="text-align: center;">
+            <a class="button toggle-button" href="javascript:void(0)">Read More</a>
+        </p>
+        <div class="details">
+            <ul>
+                <li><strong>Perfect Binding</strong> – Softcover books, magazines.</li>
+                <li><strong>Saddle Stitching</strong> – Stapled booklets, catalogs.</li>
+                <li><strong>Spiral & Wire Binding</strong> – Notebooks, reports, manuals.</li>
+                <li><strong>Hardbound Binding</strong> – Thesis, yearbooks, legal documents.</li>
+            </ul>
+        </div>
+    </div>
 </div>
+
+<!-- Laminating & Protective Coating -->
+<div class="card">
+    <img src="./About_us/laminating.jpg" alt="Laminating Logo" class="icon">
+    <h1>Laminating</h1>
+    <div class="content">
+        <p style="text-align: center;">
+            <a class="button toggle-button" href="javascript:void(0)">Read More</a>
+        </p>
+        <div class="details">
+            <ul>
+                <li><strong>Glossy & Matte Lamination</strong> – Posters, menus, certificates.</li>
+                <li><strong>Encapsulation</strong> – Protective lamination for IDs, important documents.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Cutting & Finishing Services -->
+<div class="card">
+    <img src="./About_us/cutting.jpg" alt="Cutting & Finishing Logo" class="icon">
+    <h1>Cutting & Finishing</h1>
+    <div class="content">
+        <p style="text-align: center;">
+            <a class="button toggle-button" href="javascript:void(0)">Read More</a>
+        </p>
+        <div class="details">
+            <ul>
+                <li><strong>Precision Cutting & Trimming</strong> – Business cards, invitations, labels.</li>
+                <li><strong>Die Cutting</strong> – Customized shapes for stickers, labels, packaging.</li>
+                <li><strong>Foil Stamping & Embossing</strong> – Elegant designs for invitations and certificates.</li>
+                <li><strong>Creasing & Folding</strong> – Pamphlets, brochures, greeting cards.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+</main>
+
+    
+           
     
             
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h4>About Us</h4>
-                    <p>Your reliable source for quality products and services.</p>
-                </div>
-                <div class="footer-section links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section social">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h4>About Us</h4>
+            <p>Your reliable source for quality products and services.</p>
+        </div>
+        <div class="footer-section links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section social">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/FEUTechOfficial/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://x.com/i/flow/login?redirect_after_login=%2Ffeutechofficial"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/feutech_official/?hl=en"><i class="fa-brands fa-instagram"></i></a>
             </div>
-            <div class="footer-bottom">
-                &copy; 2025 Your Company | All Rights Reserved
-            </div>
-        </footer>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 FEU Institute of Technology  | All Rights Reserved
+    </div>
+
+</footer>
 
  <script src="service.js"></script>
     </body>
