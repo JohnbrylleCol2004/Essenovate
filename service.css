@@ -346,20 +346,21 @@ body {
     }
 }
 
-/* 🌟 Default: 4-Card Grid Layout */
+/*  Default: Horizontal Layout */
 .services {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 cards in a row */
-    gap: 60px;
-    padding: 40px 5%; /* Extra space around all sides */
-    margin: 0 auto; /* Centers content */
-    max-width: 1300px; /* Prevents stretching */
-    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row; /* Default: Horizontal */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center items */
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0 100px; /* Space for footer */
+    margin-left: 5px; /* Add left margin */
 }
 
 /* Card Styles */
 .card {
-    width: 100%;
+    width: 300px;
     padding: 20px 30px;
     border-radius: 20px;
     background: #FFDBB5;
@@ -378,44 +379,46 @@ body {
     border-radius: 10px;
 }
 
-/* 🌟 Responsive: 2x2 Grid Layout at 1301px */
-@media (max-width: 1301px) {
-    .services {
-        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
-        gap: 60px;
-        padding: 0 10%; /* Equal left & right margins */
-    }
+
+/*  Default Layout: 4 Cards in a Row */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-/* 🌟 Mobile Adjustments: Stack Cards Vertically */
-@media (max-width: 992px) {
+/*  Switch to 2x2 Grid at 1355px */
+@media (max-width: 1355px) {
     .services {
-        grid-template-columns: 1fr; /* Stack in a single column */
-        padding: 0 5%; /* Reduce margins but keep even spacing */
-    }
-
-    .card {
-        width: 90%; /* Cards take up more space */
-        max-width: 400px; /* Prevents too wide */
-    }
-}
-
-/* 🌟 Mobile Adjustments (Very Small Screens) */
-@media (max-width: 480px) {
-    .services {
-        padding: 0 2%; /* Smaller margin */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 20px;
+        justify-content: center; /* Centers the grid */
     }
 
     .card {
         width: 90%;
-        max-width: 300px;
-        padding: 15px;
-    }
-
-    .card img {
-        max-height: 150px;
+        max-width: 400px;
+        margin: 0 auto; /* Ensures centering */
     }
 }
+
+/* 🌟 Switch to 1x1 Stack at 768px (Mobile View) */
+@media (max-width: 768px) {
+    .services {
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center alignment */
+    }
+
+    .card {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto; /* Keeps it centered */
+    }
+}
+
 
 
 
