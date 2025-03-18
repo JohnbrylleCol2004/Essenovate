@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vitality Tea</title>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="./image/Logo.png" type="image/x-icon">
-        <link rel="stylesheet" href="about.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        </head>
-    <body onload="hideLoadingScreen()">
+        <link rel="stylesheet" href="service.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
 
-        <div id="loading-screen"> 
-            <div class="container">
-                <div class="steam">
-                    <div class="steam steam-1"></div>
-                        <div class="steam steam-2"></div>
-                        <div class="steam steam-3"></div>
-                </div>
-                <div class="coffee-cup">
-                    <div class="handle"></div>
-                </div>
-                <div class="loading-text">Brewing your experience...</div>
-            </div>
-        </div>
-
-        <header>
+        <header id="header">
             <div class="header">
                 <div class="headerbar">
                     <div class="account">
@@ -46,7 +33,7 @@
                             </div>
                             <a href="">
                                 <li>
-                                    <i class="fa-solid fa-user"></i>
+                                    <i class="fa-solid fa-user" id="user-mb"></i>
                                 </li>
                             </a>
                         </ul>
@@ -76,10 +63,10 @@
                 </div>
     
                 <div class="logo">
-                <a href="index.html">
-                    <img src="./About_us/logo.png" alt="logo">
-                </a>
-            </div>
+                    <a href="index.html">
+                        <img src="./image/new_logo.png" alt="logo">
+                    </a>
+                </div>
     
                 <div class="bar">
                     <i class="fa-solid fa-bars"></i>
@@ -89,7 +76,7 @@
                 <nav class="nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="Service.html">Service</a></li>
+                        <li><a href="service.html">Service</a></li>
                         <li><a href="menu.html">Menu</a></li>
                         <li><a href="order.html">Order</a></li>
                         <li><a href="about.html">About</a></li>
@@ -105,96 +92,222 @@
                             <input type="search" placeholder="Search...">
                             <i class="fa-solid fa-magnifying-glass srchicon"></i>
                         </div>
-                        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                        <li><a href="#"><i class="fa-solid fa-user" id="user-mb"></i></a></li>
                     </ul>
                 </div>
             </div>
         </header>
-    
-        <div class="container1">
-            <div class="card">
-                <div class="carousel">
-                    <button class="carousel-btn left" onclick="prevSlide()">&#9664;</button>
-                    <div class="carousel-images">
-                        <div class="carousel-image active"> 
-                            <img id="carouselImg1" src="./About_us/col.jpg" alt="">
-                        </div>
-                        <div class="carousel-image"><img src="./About_us/zai.jpg" alt="">
-                        </div>
-                        <div class="carousel-image"><img src="./About_us/jethro.jpg" alt="">
-                        </div>
-                        <div class="carousel-image"><img src="" alt="">
-                        </div>
-                    </div>
-                    <button class="carousel-btn right" onclick="nextSlide()">&#9654;</button>
-                </div>
         
-            
-                <div class="content">
-                    <h2 id="about-title">About Me</h2>
-                    <p id="about-description">As a second-year IT student at FEU Tech, I'm passionate about backend development and problem-solving. I enjoy tackling complex challenges, particularly in web design and optimizing website functionality. Writing clean, efficient code is my forte, and I'm always eager to learn new technologies to refine my skills. My goal is to develop user-friendly websites and functional systems that effectively address users' needs.</p>
-        
-                    <h2><br>Details:</h2>
-                    <p><strong><br>Name:</strong> <span id="person-name">John Brylle Col</span></p>
-                    <p><strong>Age:</strong> <span id="person-age">20</span></p>
-                    <p><strong>Email:</strong> <span id="person-email">202310280@fit.edu.ph</span></p>
-                </div>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com" target="_blank" id="facebook-link"><i class="fa-brands fa-square-facebook"></i></a>
-                    <a href="https://www.twitter.com" target="_blank" id="instagram-link"><i class="fa-brands fa-square-instagram"></i></a>
-                    <a href="https://www.instagram.com" target="_blank" id="github-link"><i class="fa-brands fa-square-github"></i></a>
-                    <a href="https://www.linkedin.com" target="_blank" id="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-    
-            <!-- Vision & Mission Section -->
-            <div class="vision-mission">
-                <div class="section-group">
-                    <h1>Our Vision:<br></h1>
-                    <p>To be the leading one-stop destination that seamlessly integrates high-quality printing services with a convenient and satisfying food experience. We envision a space where creativity meets comfort, allowing individuals and businesses to bring their ideas to life through professional printing solutions while enjoying a selection of refreshing drinks and delicious sandwiches. By embracing innovation, efficiency, and customer-focused service, we aim to redefine convenience by providing a place where productivity and relaxation go hand in hand, ensuring that every visit—whether for printing or dining—is both fulfilling and enjoyable.<br><br><br></p>
-                </div>
-            
-                <div class="section-group">
-                    <h1>Our Mission:<br></h1>
-                    <p>Our mission is to provide high-quality printing services and a convenient online food ordering experience in one seamless platform. We are committed to delivering precise, professional prints while offering a satisfying selection of hot and cold drinks and delicious sandwiches. By combining efficiency, innovation, and customer-focused service, we aim to create a space where productivity and comfort come together, ensuring every interaction is convenient, enjoyable, and valuable.<br><br><br></p>
-                </div>
-                <div class="section-group">
-                    <button class="credits-button" onclick="goToCredits()">Credits</button>
-                </div>
-            </div>  
+        <div class="title">
+            <h1>Our Services</h1>
         </div>
-        
-    
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h4>About Us</h4>
-                    <p>Your reliable source for quality products and services.</p>
-                </div>
-                <div class="footer-section links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="Service.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section social">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons1">
-                        <a href="https://www.facebook.com/FEUTechOfficial/"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://x.com/i/flow/login?redirect_after_login=%2Ffeutechofficial"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/feutech_official/?hl=en"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2025 FEU Institute of Technology  | All Rights Reserved
-            </div>
-    
-        </footer>
 
- <script src="about.js"></script>
+        <section class="services">
+    <div class="card">
+        <img src="download.png" alt="Digital Printing Logo" class="icon">
+        <h1>Digital Printing</h1>
+        <div class="content">
+            <p style="text-align: center;">
+                <a class="button toggle-button" href="javascript:void(0)">Read More</a>
+            </p>
+            <div class="details">
+                <h3>Ink Types:</h3>
+                <ul class="ink-list">
+                    <li>
+                        <strong id="tonerInk" class="clickable-text">Toner-based ink</strong> – Powdered ink fused onto paper using heat.
+                        <div id="tonerImage" class="image-container">
+                            <img src="toner-based.jpg" alt="Toner-based Ink">
+                        </div>
+                    </li>
+                
+                    <li>
+                        <strong id="inkjetInk" class="clickable-text"><br>Inkjet ink</strong> – Liquid ink sprayed onto paper.
+                        <div id="inkjetImage" class="image-container">
+                            <img src="inkjet (2).jpg" alt="Inkjet Ink">
+                        </div>
+                    </li>
+                
+                    <li>
+                        <strong id="uvInk" class="clickable-text"><br>UV-curable ink</strong> – Cured with UV light for fast drying and durability.
+                        <div id="uvImage" class="image-container">
+                            <img src="uv-ink.png" alt="UV-Curable Ink">
+                        </div>
+                    </li>
+                
+                    <li>
+                        <strong id="solventInk" class="clickable-text"><br>Eco-Solvent Ink</strong> – Used for outdoor signage and banners.
+                        <div id="solventImage" class="image-container">
+                            <img src="eco.jpg" alt="Solvent & Eco-Solvent Ink">
+                        </div>
+                    </li>
+                </ul>
+                
+                <h3>Paper Types:</h3>
+                <ul class="ink-list">
+                    <li>
+                        <strong id="coatedPaper" class="clickable-text">Coated Paper</strong> – Glossy, matte, or silk finishes for sharp images.
+                        <div id="imageContainer5" class="image-container">
+                            <img src="coated.jpeg" alt="Coated Paper">
+                        </div>
+                    </li>
+                    <li>
+                        <strong id="uncoatedPaper" class="clickable-text"><br>Regular paper</strong> – More natural, absorbent, and ideal for writing.
+                        <div id="imageContainer6" class="image-container">
+                            <img src="uncoated.jpg" alt="Uncoated Paper">
+                        </div>
+                    </li>
+                    <li>
+                        <strong id="cardstock" class="clickable-text"><br>Cardstock</strong> – Thicker, used for business cards and invitations.
+                        <div id="imageContainer7" class="image-container">
+                            <img src="cardstock.jpg" alt="Cardstock">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<!-- Book Binding & Finishing -->
+<div class="card">
+    <img src="bookbind.png" alt="Book Binding Logo" class="icon">
+    <h1>Book Binding</h1>
+    <div class="content">
+        <p style="text-align: center;">
+            <a class="button toggle-button" href="javascript:void(0)">Read More</a>
+        </p>
+        <div class="details">
+            <ul class="ink-list">
+                <li>
+                    <strong id="perfectBinding" class="clickable-text">Perfect Binding</strong> – Softcover books, magazines.
+                    <div id="perfectBindingImage" class="image-container">
+                        <img src="perfect-binding.jpg" alt="Perfect Binding">
+                    </div>
+                </li>
+            
+                <li>
+                    <strong id="saddleStitching" class="clickable-text"><br>Saddle Stitching</strong> – Stapled booklets, catalogs.
+                    <div id="saddleStitchingImage" class="image-container">
+                        <img src="saddle-stitch-binding.jpg" alt="Saddle Stitching">
+                    </div>
+                </li>
+            
+                <li>
+                    <strong id="spiralBinding" class="clickable-text"><br>Spiral & Wire Binding</strong> – Notebooks, reports, manuals.
+                    <div id="spiralBindingImage" class="image-container">
+                        <img src="wire-binding.jpg" alt="Spiral & Wire Binding">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Laminating & Protective Coating -->
+<div class="card">
+    <img src="laminating.jpg" alt="Laminating Logo" class="icon">
+    <h1>Laminating</h1>
+    <div class="content">
+        <p style="text-align: center;">
+            <a class="button toggle-button" href="javascript:void(0)">Read More</a>
+        </p>
+        <div class="details">
+            <ul class="ink-list">
+                <li>
+                    <strong id="glossyMatte" class="clickable-text">Glossy & Matte Lamination</strong> – Posters, menus, certificates.
+                    <div id="glossyMatteImage" class="image-container">
+                        <img src="gloss.png" alt="Glossy & Matte Lamination">
+                    </div>
+                </li>
+            
+                <li>
+                    <strong id="encapsulation" class="clickable-text"><br>Encapsulation</strong> – Protective lamination for IDs, important documents.
+                    <div id="encapsulationImage" class="image-container">
+                        <img src="encapsulation.jpg" alt="Encapsulation">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Cutting & Finishing Services -->
+<div class="card">
+    <img src="foil-printing.jpg" alt="Cutting & Finishing Logo" class="icon">
+    <h1>Other services</h1>
+    <div class="content">
+        <p style="text-align: center;">
+            <a class="button toggle-button" href="javascript:void(0)">Read More</a>
+        </p>
+        <div class="details">
+            <ul class="ink-list">
+                <li>
+                    <strong id="foilStamping" class="clickable-text">Foil Stamping & Embossing</strong> – Elegant designs for invitations and certificates.
+                    <div id="foilStampingImage" class="image-container">
+                        <img src="foil-printing.jpg" alt="Foil Stamping & Embossing">
+                    </div>
+                </li>
+
+                <li>
+                    <strong id="precisionCutting" class="clickable-text"><br>Precision Cutting & Trimming</strong> – Business cards, invitations, labels.
+                    <div id="precisionCuttingImage" class="image-container">
+                        <img src="cutting.jpg" alt="Precision Cutting & Trimming">
+                    </div>
+                </li>
+            
+                <li>
+                    <strong id="dieCutting" class="clickable-text"><br>Die Cutting</strong> – Customized shapes for stickers, labels, packaging.
+                    <div id="dieCuttingImage" class="image-container">
+                        <img src="die-cuutting.jpg" alt="Die Cutting">
+                    </div>
+                </li>
+
+                <li>
+                    <strong id="creasingFolding" class="clickable-text"><br>Creasing & Folding</strong> – Pamphlets, brochures, greeting cards.
+                    <div id="creasingFoldingImage" class="image-container">
+                        <img src="creasing.jpg" alt="Creasing & Folding">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+</main>
+
+    
+           
+    
+            
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h4>About Us</h4>
+            <p>Your reliable source for quality products and services.</p>
+        </div>
+        <div class="footer-section links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section social">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/FEUTechOfficial/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://x.com/i/flow/login?redirect_after_login=%2Ffeutechofficial"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/feutech_official/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 FEU Institute of Technology  | All Rights Reserved
+    </div>
+
+</footer>
+
+ <script src="service.js"></script>
     </body>
 </html>
