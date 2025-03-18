@@ -24,7 +24,7 @@
     text-align: center;
     font-size: large;
 
-    margin-top: 120px;
+    margin-top: 150px;
 }
 
 .order-form hr {
@@ -239,12 +239,13 @@ body {
     width: 100vw;
 
     /*for sticky header */
-    padding-top: 60px;
+    padding-top:160px;
 
 }
 
 html, body {
     overflow-x: hidden;
+    overflow-y: auto;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -281,11 +282,12 @@ html, body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px; 
+    height: 120px; 
     margin-bottom: 50px;
     padding: 0 20px;
     z-index: 1000; 
 }
+
 
 
 .nav ul {
@@ -751,7 +753,7 @@ html, body {
         align-items: center;
         justify-content: center;
 
-        margin-top: 120px; /* for sticky header */
+        margin-top: 150px; /* for sticky header */
     }
 
     .order-form table {
@@ -792,7 +794,7 @@ html, body {
         align-items: center;
         justify-content: center;
 
-        margin-bottom: 120px; /* for sticky header */
+        margin-bottom: 150px; /* for sticky header */
     }
 
     .order-form table {
@@ -927,7 +929,7 @@ html, body {
 
 
 
-        margin-top: 120px; /* for sticky header */
+        margin-top: 150px; /* for sticky header */
     }
 
     .order-form table {
@@ -978,7 +980,7 @@ html, body {
         justify-content: center;
 
 
-        margin-top: 120px; /* for sticky header */
+        margin-top: 150px; /* for sticky header */
     }
 
     .order-form table {
@@ -1104,7 +1106,7 @@ html, body {
         align-items: center;
         justify-content: center;
 
-        margin-top: 120px; /* for sticky header */
+        margin-top: 150px; /* for sticky header */
     }
 
     .order-form table {
