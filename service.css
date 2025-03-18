@@ -428,6 +428,31 @@ body {
 }
 
 
+/* Style the list */
+.ink-list {
+    list-style-type: none;
+}
+
+/* Clickable text */
+.clickable-text {
+    cursor: pointer;
+    color: #4A2C17;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Hidden image container */
+.image-container {
+    display: none;
+    margin-top: 10px;
+}
+
+.image-container img {
+    width: 300px; /* Set consistent image size */
+    max-width: 100%;
+    border-radius: 5px; /* Slight rounded corners for better look */
+}
+
 
     /* Footer sticks to the bottom */
 .footer {
