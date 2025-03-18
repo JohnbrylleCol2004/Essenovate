@@ -9,7 +9,7 @@ const personEmail = document.getElementById('person-email');
 const facebookLink = document.getElementById('facebook-link');
 const instagramLink = document.getElementById('instagram-link');
 const githubLink = document.getElementById('github-link');
-const linkedinLink = document.getElementById('linkedin-link');
+const briefcaseLink = document.getElementById('briefcase-link');
 
 const data = [
     {
@@ -20,6 +20,8 @@ const data = [
         email: "202310280@fit.edu.ph",
         social: {
             facebook: "https://www.facebook.com/jeybi.col",
+            instagram: "https://www.instagram.com/jeybantots_/",
+            briefcase: "https://edith.feutech.edu.ph/briefcase/profile/082013202T",
         }
     },
     {
@@ -30,6 +32,8 @@ const data = [
         email: "202310159@fit.edu.ph",
         social: {
             facebook: "https://www.facebook.com/profile.php?id=100042834517769",
+            instagram: "",
+            briefcase: "https://edith.feutech.edu.ph/briefcase/profile/951013202T",
         }
     },
     {
