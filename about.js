@@ -41,6 +41,7 @@ const data = [
         social: {
             facebook: "https://www.facebook.com/jethro.wang.94",
             instagram: "https://www.instagram.com/jethro.wang.94?igsh=MWp6bjhyOGJ2OXhnZQ==",
+            briefcase: "https://edith.feutech.edu.ph/briefcase/profile/022113202T"
         }
     },
     {
