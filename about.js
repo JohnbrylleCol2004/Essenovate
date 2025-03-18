@@ -14,7 +14,7 @@ const linkedinLink = document.getElementById('linkedin-link');
 const data = [
     {
         title: "About Me",
-        description: "Lorem ipsum for col.jpg...",
+        description: "As a second-year IT student at FEU Tech, I'm passionate about backend development and problem-solving. I enjoy tackling complex challenges, particularly in web design and optimizing website functionality. Writing clean, efficient code is my forte, and I'm always eager to learn new technologies to refine my skills. My goal is to develop user-friendly websites and functional systems that effectively address users' needs.",
         name: "John Brylle Col",
         age: "20",
         email: "202310280@fit.edu.ph",
