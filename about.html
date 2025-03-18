@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="./image/Logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="about.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        </head>
+    <body onload="hideLoadingScreen()">
+
+        <div id="loading-screen"> 
+            <div class="container">
+                <div class="steam">
+                    <div class="steam steam-1"></div>
+                        <div class="steam steam-2"></div>
+                        <div class="steam steam-3"></div>
+                </div>
+                <div class="coffee-cup">
+                    <div class="handle"></div>
+                </div>
+                <div class="loading-text">Brewing your experience...</div>
+            </div>
+        </div>
+
+        <header>
+            <div class="header">
+                <div class="headerbar">
+                    <div class="account">
+                        <ul>
+                            <a href="">
+                                <li>
+                                    <i class="fa-solid fa-house-chimney"></i>
+                                </li>
+                            </a>
+                            <a href="#" id="searchicon1">
+                                <li>
+                                    <i class="fa-solid fa-magnifying-glass searchicon"></i>
+                                </li>
+                            </a>
+                            <div class="search" id="searchinput1">
+                                <input type="search" placeholder="Search...">
+                                <i class="fa-solid fa-magnifying-glass srchicon"></i>
+                            </div>
+                            <a href="">
+                                <li>
+                                    <i class="fa-solid fa-user"></i>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="nav">
+                        <ul>
+                            <a href="index.html">
+                                <li>Home</li>
+                            </a>
+                            <a href="Service.html">
+                                <li>Service</li>
+                            </a>
+                            <a href="menu.html">
+                                <li>Menu</li>
+                            </a>
+                            <a href="order.html">
+                                <li>Order</li>
+                            </a>
+                            <a href="about.html">
+                                <li>About</li>
+                            </a>
+                            <a href="contact.html">
+                                <li>Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="logo">
+                <a href="index.html">
+                    <img src="./About_us/logo.png" alt="logo">
+                </a>
+            </div>
+    
+                <div class="bar">
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-xmark" id="hdcross"></i>
+                </div>
+    
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Service.html">Service</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="order.html">Order</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+    
+                <div class="account">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-house-chimney"></i></a></li>
+                        <li><a href="#" id="searchicon2"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <div class="search" id="searchinput2">
+                            <input type="search" placeholder="Search...">
+                            <i class="fa-solid fa-magnifying-glass srchicon"></i>
+                        </div>
+                        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container1">
+            <div class="card">
+                <div class="carousel">
+                    <button class="carousel-btn left" onclick="prevSlide()">&#9664;</button>
+                    <div class="carousel-images">
+                        <div class="carousel-image active"> 
+                            <img id="carouselImg1" src="./About_us/col.jpg" alt="">
+                        </div>
+                        <div class="carousel-image"><img src="./About_us/zai.jpg" alt="">
+                        </div>
+                        <div class="carousel-image"><img src="./About_us/jethro.jpg" alt="">
+                        </div>
+                        <div class="carousel-image"><img src="./About_us/ereso.jpg" alt="">
+                        </div>
+                    </div>
+                    <button class="carousel-btn right" onclick="nextSlide()">&#9654;</button>
+                </div>
+        
+            
+                <div class="content">
+                    <h2 id="about-title">About Me</h2>
+                    <p id="about-description">As a second-year IT student at FEU Tech, I'm passionate about backend development and problem-solving. I enjoy tackling complex challenges, particularly in web design and optimizing website functionality. Writing clean, efficient code is my forte, and I'm always eager to learn new technologies to refine my skills. My goal is to develop user-friendly websites and functional systems that effectively address users' needs.</p>
+        
+                    <h2><br>Details:</h2>
+                    <p><strong><br>Name:</strong> <span id="person-name">John Brylle Col</span></p>
+                    <p><strong>Age:</strong> <span id="person-age">20</span></p>
+                    <p><strong>Email:</strong> <span id="person-email">202310280@fit.edu.ph</span></p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" id="facebook-link"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" id="instagram-link"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" id="github-link"><i class="fa-brands fa-square-github"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" id="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+    
+            <!-- Vision & Mission Section -->
+            <div class="vision-mission">
+                <div class="section-group">
+                    <h1>Our Vision:<br></h1>
+                    <p>To be the leading one-stop destination that seamlessly integrates high-quality printing services with a convenient and satisfying food experience. We envision a space where creativity meets comfort, allowing individuals and businesses to bring their ideas to life through professional printing solutions while enjoying a selection of refreshing drinks and delicious sandwiches. By embracing innovation, efficiency, and customer-focused service, we aim to redefine convenience by providing a place where productivity and relaxation go hand in hand, ensuring that every visit—whether for printing or dining—is both fulfilling and enjoyable.<br><br><br></p>
+                </div>
+            
+                <div class="section-group">
+                    <h1>Our Mission:<br></h1>
+                    <p>Our mission is to provide high-quality printing services and a convenient online food ordering experience in one seamless platform. We are committed to delivering precise, professional prints while offering a satisfying selection of hot and cold drinks and delicious sandwiches. By combining efficiency, innovation, and customer-focused service, we aim to create a space where productivity and comfort come together, ensuring every interaction is convenient, enjoyable, and valuable.<br><br><br></p>
+                </div>
+                <div class="section-group">
+                    <button class="credits-button" onclick="goToCredits()">Credits</button>
+                </div>
+            </div>  
+        </div>
+        
+    
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>About Us</h4>
+                    <p>Your reliable source for quality products and services.</p>
+                </div>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="Service.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons1">
+                        <a href="https://www.facebook.com/FEUTechOfficial/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com/i/flow/login?redirect_after_login=%2Ffeutechofficial"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/feutech_official/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 FEU Institute of Technology  | All Rights Reserved
+            </div>
+    
+        </footer>
+
+ <script src="about.js"></script>
+    </body>
+</html>
