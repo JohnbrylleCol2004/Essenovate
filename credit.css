@@ -389,6 +389,10 @@ h1 {
     transform: translateX(-5px); 
 }
 
+.digi{
+    border-radius: 40px;
+}
+
 
 .footer {
     position: relative;
