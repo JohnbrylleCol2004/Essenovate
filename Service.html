@@ -10,21 +10,8 @@
         <link rel="stylesheet" href="service.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
-    <body onload="hideLoadingScreen()">
+    <body>
 
-        <div id="loading-screen">
-            <div class="container1">
-                <div class="steam">
-                    <div class="steam steam-1"></div>
-                        <div class="steam steam-2"></div>
-                        <div class="steam steam-3"></div>
-                </div>
-                <div class="coffee-cup">
-                    <div class="handle"></div>
-                </div>
-                <div class="loading-text">Brewing your experience...</div>
-            </div>
-        </div>
         <header id="header">
             <div class="header">
                 <div class="headerbar">
@@ -77,7 +64,7 @@
     
                 <div class="logo">
                     <a href="index.html">
-                        <img src="./About_us/logo.png" alt="logo">
+                        <img src="./image/new_logo.png" alt="logo">
                     </a>
                 </div>
     
@@ -115,10 +102,9 @@
             <h1>Our Services</h1>
         </div>
 
-        <main></main>
         <section class="services">
     <div class="card">
-        <img src="./About_us/download.png" alt="Digital Printing Logo" class="icon">
+        <img src="download.png" alt="Digital Printing Logo" class="icon">
         <h1>Digital Printing</h1>
         <div class="content">
             <p style="text-align: center;">
@@ -126,18 +112,56 @@
             </p>
             <div class="details">
                 <h3>Ink Types:</h3>
-                <ul>
-                    <li><strong>Toner-based ink</strong> – Powdered ink fused onto paper using heat.</li>
-                    <li><strong>Inkjet ink</strong> – Liquid ink sprayed onto paper.</li>
-                    <li><strong>UV-curable ink</strong> – Cured with UV light for fast drying and durability.</li>
-                    <li><strong>Solvent & Eco-Solvent Ink</strong> – Used for outdoor signage and banners.</li>
+                <ul class="ink-list">
+                    <li>
+                        <strong id="tonerInk" class="clickable-text">Toner-based ink</strong> – Powdered ink fused onto paper using heat.
+                        <div id="tonerImage" class="image-container">
+                            <img src="toner-based.jpg" alt="Toner-based Ink">
+                        </div>
+                    </li>
+                
+                    <li>
+                        <strong id="inkjetInk" class="clickable-text"><br>Inkjet ink</strong> – Liquid ink sprayed onto paper.
+                        <div id="inkjetImage" class="image-container">
+                            <img src="inkjet (2).jpg" alt="Inkjet Ink">
+                        </div>
+                    </li>
+                
+                    <li>
+                        <strong id="uvInk" class="clickable-text"><br>UV-curable ink</strong> – Cured with UV light for fast drying and durability.
+                        <div id="uvImage" class="image-container">
+                            <img src="uv-ink.png" alt="UV-Curable Ink">
+                        </div>
+                    </li>
+                
+                    <li>
+                        <strong id="solventInk" class="clickable-text"><br>Eco-Solvent Ink</strong> – Used for outdoor signage and banners.
+                        <div id="solventImage" class="image-container">
+                            <img src="eco.jpg" alt="Solvent & Eco-Solvent Ink">
+                        </div>
+                    </li>
                 </ul>
+                
                 <h3>Paper Types:</h3>
-                <ul>
-                    <li><strong>Coated Paper</strong> – Glossy, matte, or silk finishes for sharp images.</li>
-                    <li><strong>Uncoated Paper</strong> – More natural, absorbent, and ideal for writing.</li>
-                    <li><strong>Cardstock</strong> – Thicker, used for business cards and invitations.</li>
-                    <li><strong>Specialty Papers</strong> – Textured, recycled, or synthetic papers.</li>
+                <ul class="ink-list">
+                    <li>
+                        <strong id="coatedPaper" class="clickable-text">Coated Paper</strong> – Glossy, matte, or silk finishes for sharp images.
+                        <div id="imageContainer5" class="image-container">
+                            <img src="coated.jpeg" alt="Coated Paper">
+                        </div>
+                    </li>
+                    <li>
+                        <strong id="uncoatedPaper" class="clickable-text"><br>Regular paper</strong> – More natural, absorbent, and ideal for writing.
+                        <div id="imageContainer6" class="image-container">
+                            <img src="uncoated.jpg" alt="Uncoated Paper">
+                        </div>
+                    </li>
+                    <li>
+                        <strong id="cardstock" class="clickable-text"><br>Cardstock</strong> – Thicker, used for business cards and invitations.
+                        <div id="imageContainer7" class="image-container">
+                            <img src="cardstock.jpg" alt="Cardstock">
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -145,18 +169,34 @@
 
 <!-- Book Binding & Finishing -->
 <div class="card">
-    <img src="./About_us/bookbind.png" alt="Book Binding Logo" class="icon">
+    <img src="bookbind.png" alt="Book Binding Logo" class="icon">
     <h1>Book Binding</h1>
     <div class="content">
         <p style="text-align: center;">
             <a class="button toggle-button" href="javascript:void(0)">Read More</a>
         </p>
         <div class="details">
-            <ul>
-                <li><strong>Perfect Binding</strong> – Softcover books, magazines.</li>
-                <li><strong>Saddle Stitching</strong> – Stapled booklets, catalogs.</li>
-                <li><strong>Spiral & Wire Binding</strong> – Notebooks, reports, manuals.</li>
-                <li><strong>Hardbound Binding</strong> – Thesis, yearbooks, legal documents.</li>
+            <ul class="ink-list">
+                <li>
+                    <strong id="perfectBinding" class="clickable-text">Perfect Binding</strong> – Softcover books, magazines.
+                    <div id="perfectBindingImage" class="image-container">
+                        <img src="perfect-binding.jpg" alt="Perfect Binding">
+                    </div>
+                </li>
+            
+                <li>
+                    <strong id="saddleStitching" class="clickable-text"><br>Saddle Stitching</strong> – Stapled booklets, catalogs.
+                    <div id="saddleStitchingImage" class="image-container">
+                        <img src="saddle-stitch-binding.jpg" alt="Saddle Stitching">
+                    </div>
+                </li>
+            
+                <li>
+                    <strong id="spiralBinding" class="clickable-text"><br>Spiral & Wire Binding</strong> – Notebooks, reports, manuals.
+                    <div id="spiralBindingImage" class="image-container">
+                        <img src="wire-binding.jpg" alt="Spiral & Wire Binding">
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -164,16 +204,27 @@
 
 <!-- Laminating & Protective Coating -->
 <div class="card">
-    <img src="./About_us/laminating.jpg" alt="Laminating Logo" class="icon">
+    <img src="laminating.jpg" alt="Laminating Logo" class="icon">
     <h1>Laminating</h1>
     <div class="content">
         <p style="text-align: center;">
             <a class="button toggle-button" href="javascript:void(0)">Read More</a>
         </p>
         <div class="details">
-            <ul>
-                <li><strong>Glossy & Matte Lamination</strong> – Posters, menus, certificates.</li>
-                <li><strong>Encapsulation</strong> – Protective lamination for IDs, important documents.</li>
+            <ul class="ink-list">
+                <li>
+                    <strong id="glossyMatte" class="clickable-text">Glossy & Matte Lamination</strong> – Posters, menus, certificates.
+                    <div id="glossyMatteImage" class="image-container">
+                        <img src="gloss.png" alt="Glossy & Matte Lamination">
+                    </div>
+                </li>
+            
+                <li>
+                    <strong id="encapsulation" class="clickable-text">Encapsulation</strong> – Protective lamination for IDs, important documents.
+                    <div id="encapsulationImage" class="image-container">
+                        <img src="encapsulation.jpg" alt="Encapsulation">
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -181,18 +232,41 @@
 
 <!-- Cutting & Finishing Services -->
 <div class="card">
-    <img src="./About_us/cutting.jpg" alt="Cutting & Finishing Logo" class="icon">
-    <h1>Cutting & Finishing</h1>
+    <img src="foil-printing.jpg" alt="Cutting & Finishing Logo" class="icon">
+    <h1>Other services</h1>
     <div class="content">
         <p style="text-align: center;">
             <a class="button toggle-button" href="javascript:void(0)">Read More</a>
         </p>
         <div class="details">
-            <ul>
-                <li><strong>Precision Cutting & Trimming</strong> – Business cards, invitations, labels.</li>
-                <li><strong>Die Cutting</strong> – Customized shapes for stickers, labels, packaging.</li>
-                <li><strong>Foil Stamping & Embossing</strong> – Elegant designs for invitations and certificates.</li>
-                <li><strong>Creasing & Folding</strong> – Pamphlets, brochures, greeting cards.</li>
+            <ul class="ink-list">
+                <li>
+                    <strong id="foilStamping" class="clickable-text">Foil Stamping & Embossing</strong> – Elegant designs for invitations and certificates.
+                    <div id="foilStampingImage" class="image-container">
+                        <img src="foil-printing.jpg" alt="Foil Stamping & Embossing">
+                    </div>
+                </li>
+
+                <li>
+                    <strong id="precisionCutting" class="clickable-text"><br>Precision Cutting & Trimming</strong> – Business cards, invitations, labels.
+                    <div id="precisionCuttingImage" class="image-container">
+                        <img src="cutting.jpg" alt="Precision Cutting & Trimming">
+                    </div>
+                </li>
+            
+                <li>
+                    <strong id="dieCutting" class="clickable-text"><br>Die Cutting</strong> – Customized shapes for stickers, labels, packaging.
+                    <div id="dieCuttingImage" class="image-container">
+                        <img src="die-cuutting.jpg" alt="Die Cutting">
+                    </div>
+                </li>
+
+                <li>
+                    <strong id="creasingFolding" class="clickable-text"><br>Creasing & Folding</strong> – Pamphlets, brochures, greeting cards.
+                    <div id="creasingFoldingImage" class="image-container">
+                        <img src="creasing.jpg" alt="Creasing & Folding">
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
