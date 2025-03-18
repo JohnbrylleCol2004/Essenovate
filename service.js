@@ -93,3 +93,39 @@ function hideLoadingScreen() {
         loadingScreen.style.display = 'none';
     }, 3000);
 }
+
+// Function to toggle image visibility
+function toggleImage(imageId) {
+    var imageContainer = document.getElementById(imageId);
+    imageContainer.style.display = (imageContainer.style.display === "none" || imageContainer.style.display === "") 
+        ? "block" 
+        : "none";
+}
+
+// Function to toggle image visibility
+function toggleImage(imageId) {
+    var imageContainer = document.getElementById(imageId);
+    imageContainer.style.display = (imageContainer.style.display === "none" || imageContainer.style.display === "") 
+        ? "block" 
+        : "none";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".clickable-text").forEach(item => {
+        item.addEventListener("click", function () {
+            var imageContainer = this.nextElementSibling; // Get the next sibling div
+
+            if (imageContainer && imageContainer.classList.contains("image-container")) {
+                var isVisible = imageContainer.style.display === "block";
+
+                // Hide all images first
+                document.querySelectorAll(".image-container").forEach(container => {
+                    container.style.display = "none";
+                });
+
+                // Show the clicked one if it wasn't visible
+                imageContainer.style.display = isVisible ? "none" : "block";
+            }
+        });
+    });
+});
