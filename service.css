@@ -190,6 +190,7 @@ body {
      background-color: #FFEAC5; /* Same as .home */
      height: 100vh;
      width: 100vw;
+     /*for sticky header */
     padding-top:160px;
  }
  
@@ -288,7 +289,7 @@ body {
      justify-content: end;
  }
 
-.header {
+ .header {
     background-color: #FFEAC5;
     border-bottom: 2px solid #6C4E31;
     box-shadow: 0 2px 20px #FFDBB5;
@@ -345,21 +346,20 @@ body {
     }
 }
 
-/* 🌟 Default: Horizontal Layout */
+/* 🌟 Default: 4-Card Grid Layout */
 .services {
-    display: flex;
-    flex-direction: row; /* Default: Horizontal */
-    flex-wrap: nowrap; /* Prevents wrapping */
-    overflow-x: unset;
-    justify-content: center; /* Center items */
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px 0 100px; /* Space for footer */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards in a row */
+    gap: 60px;
+    padding: 40px 5%; /* Extra space around all sides */
+    margin: 0 auto; /* Centers content */
+    max-width: 1300px; /* Prevents stretching */
+    margin-bottom: 40px;
 }
 
 /* Card Styles */
 .card {
-    width: 300px;
+    width: 100%;
     padding: 20px 30px;
     border-radius: 20px;
     background: #FFDBB5;
@@ -378,22 +378,34 @@ body {
     border-radius: 10px;
 }
 
-/* 🌟 Responsive: When Zoomed In (Smaller Screens) → Switch to Vertical Layout */
+/* 🌟 Responsive: 2x2 Grid Layout at 1301px */
+@media (max-width: 1301px) {
+    .services {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+        gap: 60px;
+        padding: 0 10%; /* Equal left & right margins */
+    }
+}
+
+/* 🌟 Mobile Adjustments: Stack Cards Vertically */
 @media (max-width: 992px) {
     .services {
-        flex-direction: column; /* Change to vertical */
-        align-items: center; /* Center align */
-        overflow-x: unset; /* Remove horizontal scrolling */
+        grid-template-columns: 1fr; /* Stack in a single column */
+        padding: 0 5%; /* Reduce margins but keep even spacing */
     }
 
     .card {
-        width: 90%; /* Make cards take up more space */
-        max-width: 400px; /* Prevent too much stretching */
+        width: 90%; /* Cards take up more space */
+        max-width: 400px; /* Prevents too wide */
     }
 }
 
 /* 🌟 Mobile Adjustments (Very Small Screens) */
 @media (max-width: 480px) {
+    .services {
+        padding: 0 2%; /* Smaller margin */
+    }
+
     .card {
         width: 90%;
         max-width: 300px;
@@ -404,6 +416,8 @@ body {
         max-height: 150px;
     }
 }
+
+
 
 /* Icon Styling */
 .icon {
