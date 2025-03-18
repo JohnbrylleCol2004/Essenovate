@@ -290,12 +290,39 @@ body {
 
 /* Title Styling */
 .title {
-    color: #777;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.5em;
-    max-width: 1200px;
-    margin: 10px auto;
     text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.title h1 {
+    font-size: 2.2em; /* Default size for larger screens */
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+/* Reduce font size for tablets */
+@media (max-width: 992px) {
+    .title h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* Reduce font size for mobile */
+@media (max-width: 768px) {
+    .title h1 {
+        font-size: 1.5em;
+    }
+}
+
+/* Even smaller font for very small screens */
+@media (max-width: 480px) {
+    .title h1 {
+        font-size: 1.2em;
+    }
 }
 
 /* 🌟 Default: Horizontal Layout */
