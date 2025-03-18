@@ -191,6 +191,8 @@ body {
     background-color: #FFEAC5; /* Same as .home */
     height: 100vh;
     width: 100vw;
+    /*for sticky header */
+    padding-top:160px;
 }
 
 html, body {
@@ -279,6 +281,25 @@ html, body {
 .account ul{
     display: flex;
     justify-content: end;
+}
+
+.header {
+    background-color: #FFEAC5;
+    border-bottom: 2px solid #6C4E31;
+    box-shadow: 0 2px 20px #FFDBB5;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+   
+/*for sticky header */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; 
+    margin-bottom: 50px;
+    padding: 0 20px;
+    z-index: 1000; 
 }
 
 /* Card container */
