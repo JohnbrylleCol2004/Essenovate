@@ -4,13 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vailty Tea | Menu</title>
+    <title>Vitaly Tea | Menu</title>
     <link rel="stylesheet" href="menu.css">
     <link rel="shortcut icon" href="./image/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <header>
+<body onload="hideLoadingScreen()">
+
+    <div id="loading-screen">
+        <div class="container1">
+            <div class="steam">
+                <div class="steam steam-1"></div>
+                    <div class="steam steam-2"></div>
+                    <div class="steam steam-3"></div>
+            </div>
+            <div class="coffee-cup">
+                <div class="handle"></div>
+            </div>
+            <div class="loading-text">Brewing your experience...</div>
+        </div>
+    </div>
+
+    <header id="header">
         <div class="header">
             <div class="headerbar">
                 <div class="account">
@@ -41,7 +56,7 @@
                         <a href="index.html">
                             <li>Home</li>
                         </a>
-                        <a href="service.hmtl">
+                        <a href="Service.html">
                             <li>Service</li>
                         </a>
                         <a href="menu.html">
@@ -74,7 +89,7 @@
             <nav class="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="service.html">Service</a></li>
+                    <li><a href="Service.html">Service</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="order.html">Order</a></li>
                     <li><a href="about.html">About</a></li>
@@ -97,41 +112,37 @@
     </header>
     
 
-    <div class="Top-container">
+     <div class="Top-container">
         <div class="main_slide">
-        <div class="content">
-            <h1>Delicious Drinks & Sandwiches<span> That Offers the Best Taste and Comfort</span></h1>
-            <p>
-                Settle into our cozy nook and enjoy handcrafted sandwiches and refreshing drinks, perfect for a quick break or leisurely hangout. Savor every bite, relax, and let the simple pleasures of good food and great company make your day.
-            </p>
-            
+            <div class="content">
+                <h1>Delicious Drinks & Sandwiches<span> That Offers the Best Taste and Comfort</span></h1>
+                <p>
+                    Settle into our cozy nook and enjoy handcrafted sandwiches and refreshing drinks, perfect for a quick break or leisurely hangout. Savor every bite, relax, and let the simple pleasures of good food and great company make your day.
+                </p>
+                <a href="order.html">
+                    <button class="red_btn" aria-label="Visit now">Order Now <i class="fa-solid fa-arrow-right-long"></i></button>
+                </a>
+            </div>
 
-             <a href="order.html">
-                <button class="red_btn" aria-label="Visit now">Order Now <i class="fa-solid fa-arrow-right-long"></i></button>
-            </a>
+            <div class="slider-container">
+                <div class="slide active">
+                    <img src="./image/3.png" alt="Image of product 1">
+                </div>
+                <div class="slide">
+                    <img src="./image/1.png" alt="Image of product 2">
+                </div>
+                <div class="slide">
+                    <img src="./image/2.png" alt="Image of product 3">
+                </div>
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
         </div>
-
-        <div class="slider-container">
-            <div class="slide active">
-                <img src="./image/3.png" alt="Image of product 1">
-            </div>
-            <div class="slide">
-                <img src="./image/1.png" alt="Image of product 2">
-            </div>
-            <div class="slide">
-                <img src="./image/2.png" alt="Image of product 3">
-            </div>
-        
-            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="next" onclick="changeSlide(1)">&#10095;</button>
-        </div>
-    
-        
-    </div>
     </div>
 
 
-    <div class="menu-container">
+
+    <div id="menu-container" class="menu-container">
         <div class="tabs">
             <div class="tab active" onclick="showMenu('warm')">☕ Warm Drinks</div>
             <div class="tab" onclick="showMenu('cold')">🥤 Cold Drinks</div>
@@ -266,7 +277,7 @@
 
             <div class="menu-item">
                 <img src="./image/sand6.jpg" alt="Sandwich">
-                <div class="info"><b>Cheesy Shrimp Sandwhich</b><br>Succulent shrimp coated in a creamy cheese sauce, nestled in a buttery toasted roll.
+                <div class="info"><b>Cheesy Shrimp Sandwich</b><br>Succulent shrimp coated in a creamy cheese sauce, nestled in a buttery toasted roll.
                    </div>
                 <div class="price"> ₱310</div>
             </div>
@@ -274,7 +285,7 @@
 
             <div class="menu-item">
                 <img src="./image/sand7.jpg" alt="Sandwich">
-                <div class="info"><b>Overloaded Tuna Sandwhich</b><br>A hearty sandwich packed with tuna, fresh veggies, and a zesty mayo dressing on whole-grain bread.
+                <div class="info"><b>Overloaded Tuna Sandwich</b><br>A hearty sandwich packed with tuna, fresh veggies, and a zesty mayo dressing on whole-grain bread.
                     </div>
                 <div class="price">₱270</div>
             </div>
@@ -301,8 +312,16 @@
                     </div>
                 <div class="price">₱280</div>
             </div>
+
+            
+                
         </div>
+        <a href="#menu-container">
+            <button id="backToTop">↑</button>
+        </a>
     </div>
+
+    
 
     <footer class="footer">
         <div class="footer-content">
@@ -314,24 +333,27 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="service.html">Services</a></li>
+                    <li><a href="Service.html">Services</a></li>
+                    <li><a href="menu.hmtl">Products</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section social">
                 <h4>Follow Us</h4>
                 <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/FEUTechOfficial/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://x.com/i/flow/login?redirect_after_login=%2Ffeutechofficial"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/feutech_official/?hl=en"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             &copy; 2025 FEU Institute of Technology  | All Rights Reserved
         </div>
+
     </footer>
+    
 
     <script src="menu.js"></script>
 </body>

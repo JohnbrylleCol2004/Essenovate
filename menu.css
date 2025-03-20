@@ -8,6 +8,165 @@
     font-family:'Times New Roman', Times, serif
 }
 
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFEAC5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.coffee-cup {
+    position: relative;
+    right: -80px;
+    width: 100px; /* Slightly smaller width for a tea cup */
+    height: 80px; /* Shorter height for a tea cup */
+    background:#663406; /* Lighter color for a tea cup */
+    border-radius: 0 0 50px 50px; /* More rounded bottom */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.coffee-cup::before {
+    content: '';
+    position: absolute;
+    top: 15px; /* Adjusted position for the handle */
+    right: -20px; /* Adjusted position for the handle */
+    width: 20px; /* Smaller width for a more delicate handle */
+    height: 20px; /* Smaller height for a more delicate handle */
+    border: 5px solid#663406; /* Color of the handle */
+    border-radius: 50%; /* Rounded handle */
+    transform: rotate(45deg); /* Rotate the handle for a better appearance */
+}
+
+.coffee-cup::after {
+    content: '';
+    position: absolute;
+    top: -10px; /* Adjusted position for the tea */
+    left: 10px; /* Centered the tea */
+    width: 80px; /* Width of the tea */
+    height: 20px; /* Height of the tea */
+    background: rgba(255, 228, 196, 0.8); /* Light color for tea */
+    border-radius: 50%; /* Rounded top for the tea */
+}
+
+.steam {
+    position: absolute;
+    top: 43%; /* Adjusted for better positioning */
+    right: 50vw;
+    transform: translateX(-50%);
+    width: 15px; /* Base width */
+    height: 60px; /* Base height */
+    background: rgba(255, 255, 255, 0.8); /* Lighter color for a more realistic steam */
+    border-radius: 50%; /* Keep it rounded */
+    animation: steam-rise 3s infinite ease-in-out, steam-wave 2s infinite ease-in-out;
+    opacity: 0.9; /* Initial opacity */
+}
+
+.steam-1 { 
+    animation-delay: 0s; 
+    left: 50%; /* Centered */
+}
+
+.steam-2 { 
+    animation-delay: 0.5s; 
+    left: 45%; /* Slightly to the left */
+}
+
+.steam-3 { 
+    animation-delay: 1s; 
+    left: 55%; /* Slightly to the right */
+}
+
+.steam-4 { 
+    animation-delay: 0.25s; 
+    left: 48%; /* Slightly to the left */
+}
+
+.steam-5 { 
+    animation-delay: 0.75s; 
+    left: 52%; /* Slightly to the right */
+}
+
+@keyframes steam-rise {
+    0% {
+        transform: translate(-50%, 0) scale(1);
+        opacity: 0.9; /* Start with higher opacity */
+    }
+    100% {
+        transform: translate(-50%, -150px) scale(1.2); /* Increased scale for a puffier look */
+        opacity: 0; /* Fade out */
+    }
+}
+
+@keyframes steam-wave {
+    0% {
+        transform: translate(0, 0); /* Start position */
+    }
+    20% {
+        transform: translate(10px, -20px); /* Move right and up */
+    }
+    40% {
+        transform: translate(-10px, -40px); /* Move left and up */
+    }
+    60% {
+        transform: translate(10px, -60px); /* Move right and up */
+    }
+    80% {
+        transform: translate(-5px, -80px); /* Slight left adjustment */
+    }
+    100% {
+        transform: translate(0, -100px); /* Centered and up */
+    }
+}
+
+/* Additional steam variations */
+.steam-4 {
+    animation-delay: 0.25s; /* New steam element */
+}
+
+.steam-5 {
+    animation-delay: 0.75s; /* New steam element */
+}
+
+
+.loading-text {
+    font-size: 24px; /* Adjust font size as needed */
+    color: #663406; /* Color of the text */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Space above the text */
+    opacity: 0; /* Start with hidden text */
+    animation: fadeIn 1s forwards, bounce 1s infinite; /* Apply animations */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start invisible */
+        transform: translateY(20px); /* Start slightly lower */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Original position */
+    }
+    40% {
+        transform: translateY(-10px); /* Move up */
+    }
+    60% {
+        transform: translateY(-5px); /* Move up slightly */
+    }
+}
+
+
 .logo img {
    width: 250px;
 }
@@ -19,6 +178,9 @@ body {
     background-color: #FFEAC5; /* Same as .home */
     height: 100vh;
     width: 100vw;
+
+    padding-top: 130px;
+
 }
 
 html, body {
@@ -50,9 +212,20 @@ html, body {
     height: 100px;
     padding: 0 8vw;
     background-color: #FFEAC5;
-    border-bottom: 2px solid #6C4E31;
+    border-bottom: 2px solid #663406;
     box-shadow: 0 2px 20px #FFDBB5;
-    
+
+
+    /*for sticky header */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; 
+    margin-bottom: 50px;
+    padding: 0 20px;
+    z-index: 1000; 
+
 }
 
 .nav ul {
@@ -63,7 +236,7 @@ html, body {
 }
 
 .nav ul li a:hover {
-    color: #6C4E31;
+    color: #663406;
 }
 
 .account{
@@ -78,7 +251,7 @@ html, body {
 }
 
 .account ul li i:hover {
-    color: #6C4E31;
+    color:#a55a13;
 }
 
 .search {
@@ -96,7 +269,7 @@ html, body {
 }
 
 .srchicon {
-    background-color: #6C4E31;
+    background-color: #663406;
     color: white;
     padding: 5px;
     border-radius: 4px;
@@ -211,8 +384,10 @@ html, body {
     flex-wrap: wrap-reverse;
     gap: 50px;
     padding: 20px 0;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 90px;
+    
+    
 }
 
 .content {
@@ -415,6 +590,30 @@ html, body {
     box-sizing: border-box;
 }
 
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #663406;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTop:hover {
+    background-color: #783d06;
+}
+
+
 /* Footer sticks to the bottom */
 .footer {
     position: absolute; 
@@ -487,13 +686,13 @@ html, body {
 }
 
 .footer-section ul li a:hover {
-    color: #FFD700;
+    color: #ffffff;
     text-decoration: underline;
 }
 
 
 .footer-section ul li a:hover {
-    color: #FFD700;
+    color:#ffffff;
     text-decoration: underline;
 }
 
@@ -507,7 +706,7 @@ html, body {
 
 .social-icons a:hover {
     transform: scale(1.2);
-    color: #FFD700;
+    color: #ffffff;
 }
 
 .footer-bottom {
@@ -519,6 +718,13 @@ html, body {
 }
 
 @media (max-width: 768px) {
+    #backToTop {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        bottom: 15px;
+        right: 15px;
+    }
     .menu-items {
         grid-template-columns: 1fr;
     }
@@ -535,6 +741,9 @@ html, body {
     .slider-container {
         width: 100%; /* Full width on small screens */
         padding: 10px;
+        margin-top: -30px;
+        margin-bottom: -30px;
+        
     }
 
     .prev, .next {
@@ -546,7 +755,7 @@ html, body {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .menu-container {
-        margin-top: 90px;
+        margin-top: -20px;
         max-width: 95%;
     }
     .menu-item {
@@ -647,20 +856,12 @@ span {
 @media only screen and (max-width: 879px) {
     .header .nav, .header .account {
         display: none;
-
     }
-
-    .Top-container{
-        margin-top: -50px;
-        margin-bottom: -130px;
-        
-    }
-
 
     .search {
         display: flex;
         align-items: center;
-        border: 1px solid #6C4E31;
+        border: 1px solid  #663406;
         padding: 5px;
         border-radius: 5px;
         background-color: #ffffff;
@@ -694,15 +895,16 @@ span {
         width: 100%;
         bottom: 0;
         right: -100%;
-        background-color:  #FFDBB5;
+        background-color: #FFEAC5;
         transition: right 0.5s ease;
-        z-index:1;
         overflow-y: auto;
+        
     }
 
     .headerbar .account, .headerbar .nav {
         display: block;
         font-size: 18px;
+        
     }
 
     .bar .fa-xmark {
@@ -711,11 +913,11 @@ span {
         right: 5vw;
         position:absolute;
         font-size: 25px;
+        
     }
 
-    .fa-bar{
-        font-size: 90px;
-    }
+    
+
 
     .headerbar .nav ul {
         flex-direction: column;
@@ -724,15 +926,16 @@ span {
     }
 
     .headerbar .nav li {
+        color:#663406;
+        font-size: larger;
         width: 96vw;
         margin: 10px 0;
         padding: 15px 30px;
-        background-color: #f2dab2 ;
+        background-color:  #FFEAC5 ;
         box-shadow: 0 2px 5px rgb(135, 107, 107);
         font-size: 15px;
         margin-top: 5px;
         cursor: pointer;
-        
     }
 
     .headerbar .nav a {
@@ -743,16 +946,19 @@ span {
     .headerbar .account {
         line-height: 40px;
         margin-top: 60px;
-        background-color:  #e0b983;
+        background-color: #663406;
         box-shadow: 0 2px 15px rgb(135, 107, 107);
         padding: 15px;
-    
     }
 
     .headerbar .account ul {
         justify-content: space-between;
     }
 }
+
+
+
+
 
 @media (max-width: 768px) {
     .main_slide {

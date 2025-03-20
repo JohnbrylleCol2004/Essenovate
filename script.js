@@ -1,3 +1,11 @@
+function hideLoadingScreen() {
+    setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.display = 'none';
+    }, 3000);
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const searchicon1 = document.querySelector('#searchicon1');
     const searchicon2 = document.querySelector('#searchicon2');

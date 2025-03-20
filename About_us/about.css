@@ -6,7 +6,9 @@
     text-decoration: none;
     color: black;
     font-family:'Times New Roman', Times, serif
+    
 }
+
 #loading-screen {
     position: fixed;
     top: 0;
@@ -134,6 +136,8 @@
 
 
 .loading-text {
+    position: relative;
+    margin-left: 20px;
     font-size: 24px; /* Adjust font size as needed */
     color: #663406; /* Color of the text */
     text-align: center; /* Center the text */
@@ -164,9 +168,21 @@
         transform: translateY(-5px); /* Move up slightly */
     }
 }
-        
+
 .logo img {
-    width: 250px;
+width: 250px;  /* Adjust the width as needed */
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 8vw;
+    background-color: #FFEAC5;
+    border-bottom: 2px solid #6C4E31;
+    box-shadow: 0 2px 20px #FFDBB5; 
 }
 
 body {
@@ -175,10 +191,6 @@ body {
     background-color: #FFEAC5; /* Same as .home */
     height: 100vh;
     width: 100vw;
-
-    
-    padding-top: 50px;
-    
 }
 
 html, body {
@@ -193,6 +205,14 @@ html, body {
     z-index: 1;
 }
 
+.search input {
+    width: 130px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
 .searchicon{
     display: block;
 }
@@ -201,21 +221,11 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    height: 100px;
     padding: 0 8vw;
     background-color: #FFEAC5;
-    border-bottom: 2px solid #663406;
+    border-bottom: 2px solid #6C4E31;
     box-shadow: 0 2px 20px #FFDBB5;
-    
-    /*for sticky header */
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120px; 
-    margin-bottom: 50px;
-    padding: 0 20px;
-    z-index: 1000; 
 }
 
 .nav ul {
@@ -226,12 +236,9 @@ html, body {
 }
 
 .nav ul li a:hover {
-    color:#663406;
+    color: #6C4E31;
 }
 
-.account{
-    padding-left:20px;
-}
 .account ul {
     display: flex;
     justify-content: flex-end;
@@ -240,29 +247,13 @@ html, body {
 }
 
 .account ul li i:hover {
-    color:#793f08;
+    color: #6C4E31;
 }
 
 .search {
     display: none;
     width: 200px;
     justify-content: center;
-}
-
-.search input {
-    width: 130px;
-    padding: 5px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-}
-
-.srchicon {
-    background-color:#663406;
-    color: white;
-    padding: 5px;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
 .bar {
@@ -278,151 +269,180 @@ html, body {
     justify-content: end;
 }
 
-
-
-
-
-
-/* Home Section */
-.home {
+/* Card container */
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    width: 500px;
     background-color: #FFEAC5;
-    padding: 0 7vw;
-    margin: 0;
-    box-sizing: border-box;
-    padding-bottom: 85px;
-    position: relative;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
+    margin-top: 50px;
+    margin-bottom: 50px;
     z-index: 0;
-    position: relative;
-    max-width: 95%;
-    margin: auto;
-    padding: 30px;
-    border-radius: 0px;
-    
-    margin-top: 50px ;
+    margin-left: 15em;
 }
 
-/* Main Slide Layout */
-.main_slide {
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    flex-wrap: wrap-reverse;
-    gap: 50px;
-    padding: 20px 0;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    
+    justify-content: center;
 }
 
-.wrapper {
-    flex: 1;
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
-/* Text Content */
-.content {
-    flex: 1;
-    font-size: 30px; 
-    position:relative;
-    max-width: 100%;
-    margin: auto;
-        
-    
-}
-
-.content p {
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-.content span {
-    color: #6C4E31;
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    text-decoration-color: #663406;
-}
-
-/* Button */
-.red_btn {
-    font-size: 20px;
-    cursor: pointer;
-    width: 160px;
-    font-weight: bold;
-    color: white;
-    line-height: 50px;
-    background-color: #663406;
-    border-radius: 5px;
-    border: 1px solid #663406;
-    box-shadow: 0 10px 15px #f2dab2;
-    transition: all 0.2s;
-}
-
-.red_btn i {
-    background-color: #663406;
-    font-size: 20px;
-    padding: 10px;
-    color: white;
-    transition: all 0.2s;
-}
-
-.red_btn:hover {
-    border: 1px solid#663406;
-    box-shadow: 0 5px 15px#663406;
-    color: #FFEAC5;
-}
-
-.red_btn:hover i {
-    color: #FFEAC5;
-}
-
-/* Slider Container */
-.slider-container {
-    position: relative;
-    max-width: 850px;
-    margin: 20px auto; /* Adds space around the container */
-    
-}
-
-
-.slide {
+.carousel-image {
+    min-width: 100%;
     display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    padding: 20px;
 }
 
-.slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+.carousel-image.active {
+    display: flex;
 }
 
-.active {
-    display: block;
+.carousel-image img {
+    position: absolute;
+    width: 100;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.prev, .next {
+.carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
     border: none;
-    padding: 10px 15px;
+    padding: 10px;
     cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
+    border-radius: 50%;
 }
 
-.prev {
+.carousel-btn.left {
     left: 10px;
 }
 
-.next {
+.carousel-btn.right {
     right: 10px;
 }
 
-.prev:hover, .next:hover {
-    background: rgba(0, 0, 0, 0.8);
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.container1 {
+    display: flex;
+    gap: 50px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.vision-mission {
+    width: 50%; 
+    max-width: 70%; 
+    text-align: left;
+    margin-top: 50px;
+    position: relative;
+    margin-right: 5em;
+    padding: 20px;
+}
+
+/* Ensures text wraps properly with adjustable width */
+.vision-mission p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    width: 100%; 
+    width: 700px;        /* Full width by default */
+}
+
+/* Group h1 and p but allow p to wrap */
+.vision-mission h1, 
+.vision-mission p {
+    margin: 0;
+    word-break: keep-all;
+}
+
+
+/*button*/
+.credits-button {
+    padding: 10px 20px;
+    background-color: #663406;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.credits-button:hover {
+    background-color: #a65c0a;
 }
 
 
 
+/* Content section */
+.content {
+    width: 100%;
+    text-align: left; /* Ensures proper left indentation */
+}
+
+/* About Me text */
+.content h2 {
+    margin-bottom: 10px;
+}
+
+/* Ensure text wraps properly */
+.content p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* Social Icons inside Card */
+.card .social-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Font Awesome Icons */
+.card .social-icons a {
+    font-size: 30px;  /* Adjust icon size */
+    color: #663406;  /* Match your theme */
+    transition: transform 0.3s, color 0.3s;
+}
+
+/* Hover effect */
+.card .social-icons a:hover {
+    transform: scale(1.2);
+    color: #a65c0a; /* Change color on hover */
+}
+
+
+
+
+/* Mobile Optimization */
+/* Footer */
 .footer {
     position: relative;
     width: 100%;
@@ -453,19 +473,6 @@ html, body {
 .footer-section p {
     color: #FFEAC5;
 }
-
-.social-icons i{
-    color: #FFEAC5;
-}
-
-.social-icons a{
-    margin: 0 10px;
-    color: #663406;
-    font-size: 24px;
-    text-decoration: none;
-    transition: transform 0.3s;
-}
-
 
 .footer-section h4 {
     color:#f2dab2;
@@ -511,102 +518,82 @@ html, body {
     opacity: 0.8;
 }
 
-
 /* Responsive Design */
-
 @media (max-width: 600px) {
-    
     .footer-content {
         flex-direction: column;
         align-items: center;
     }
+    
+    .card {
+        width: 90%;
+    }
 }
 
-@media (max-width: 1390px) {
-    .main_slide {
-        flex-direction: column; 
-        
+/* Mobile Screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin-top: 30px;
     }
 
-    #slideContainer {
-        order: 1;   
-  
-    }
-
-    .content {
-        order: 2;
-        font-size: large;
-        align-items: center;
-        flex: 1;
-        font-size: 30px; 
-        position:relative;
-        max-width: 100%;
-        margin: 0px;
-        margin-top: -50px;
-        
-        
-    }
-
-    .slide img {
+    .card, .vision-mission {
         width: 100%;
-        padding: 10px;
-        height: auto;
-        object-fit: cover;
-        cursor: pointer;
-        z-index:9;
-        margin-top: -50px;
-        
-    }
-
-    .prev, .next {
-        position: absolute;
-        top: 40%;
-        transform: translateY(-40%);
-        
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        cursor: pointer;
-        font-size: 16px;
-        border-radius: 5px;
-    }
-    
-    .prev {
-        left: 10px;
-    }
-    
-    .next {
-        right: 10px;
-    }
-    
-    .prev:hover, .next:hover {
-        background: rgba(0, 0, 0, 0.8);
     }
 }
 
+/* Tablets and Smaller Screens (Stack Vertically) */
+@media (max-width: 1573px) {
+    .carousel{
+        width: 100%;
+    }
 
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-@media only screen and (max-width: 879px) {
-    .header .nav, .header .account {
+    .card, .vision-mission {
+        width: 90%;
+        margin: 0;
+    }
+
+    .vision-mission p {
+        width: 100%;
+    }
+}
+
+/* Default (Desktop) - Side by Side */
+@media (min-width: 1025px) {
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+/* Navigation & Header for Smaller Screens */
+@media (max-width: 879px) {
+    .header .nav,
+    .header .account {
         display: none;
     }
 
     .search {
         display: flex;
         align-items: center;
-        border: 1px solid  #663406;
+        border: 1px solid #663406;
         padding: 5px;
         border-radius: 5px;
         background-color: #ffffff;
     }
-    
+
     .search input {
         border: none;
         outline: none;
         padding: 5px;
         width: 150px;
     }
-    
+
     .srchicon {
         display: none;
         cursor: pointer;
@@ -619,12 +606,7 @@ html, body {
         cursor: pointer;
     }
 
-    .bar:hover {
-        color: #663406;
-    }
-
     .headerbar {
-        overflow: hidden;
         display: flex;
         flex-direction: column;
         position: fixed;
@@ -635,24 +617,21 @@ html, body {
         background-color: #FFEAC5;
         transition: right 0.5s ease;
         overflow-y: auto;
-        
     }
 
-    .headerbar .account, .headerbar .nav {
+    .headerbar .account,
+    .headerbar .nav {
         display: block;
         font-size: 18px;
-        
     }
 
     .bar .fa-xmark {
         display: none;
+        position: absolute;
         top: 20px;
         right: 5vw;
-        position:absolute;
         font-size: 25px;
-        
     }
-
 
     .headerbar .nav ul {
         flex-direction: column;
@@ -661,15 +640,13 @@ html, body {
     }
 
     .headerbar .nav li {
-        color:#663406;
-        font-size: larger;
+        color: #663406;
+        font-size: 15px;
         width: 96vw;
         margin: 10px 0;
         padding: 15px 30px;
-        background-color:  #FFEAC5 ;
+        background-color: #FFEAC5;
         box-shadow: 0 2px 5px rgb(135, 107, 107);
-        font-size: 15px;
-        margin-top: 5px;
         cursor: pointer;
     }
 
@@ -688,37 +665,5 @@ html, body {
 
     .headerbar .account ul {
         justify-content: space-between;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    
-    .main_slide div:nth-child(1){
-        font-size: 18px;
-        
-    }
-
-    .main_slide div:nth-child(1) p{
-        padding-top: 5px;
-        margin: 10px 0;
-        font-size : 18px;
-        
-    }
-
-    .red_btn{
-        margin-top: 10px;
-        width: 120px;
-        line-height: 30px;
-        font-size: 12px;
-        padding: 0 10px;
-    }
-
-    .main_slide div:nth-child(1) span{
-        text-underline-offset: 5px;
-    }
-
-    .main_slide .slideshow-container{
-        width:10vw;
-        
     }
 }

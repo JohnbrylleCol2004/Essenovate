@@ -9,7 +9,24 @@
     <link rel="shortcut icon" href="./image/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+
+<body onload="hideLoadingScreen()">
+
+    <div id="loading-screen">
+        <div class="container">
+            <div class="steam">
+                <div class="steam steam-1"></div>
+                    <div class="steam steam-2"></div>
+                    <div class="steam steam-3"></div>
+            </div>
+            <div class="coffee-cup">
+                <div class="handle"></div>
+            </div>
+            <div class="loading-text">Brewing your experience...</div>
+        </div>
+    </div>
+
+    
     <header>
         <div class="header">
             <div class="headerbar">
@@ -41,7 +58,7 @@
                         <a href="index.html">
                             <li>Home</li>
                         </a>
-                        <a href="service.html">
+                        <a href="Service.html">
                             <li>Service</li>
                         </a>
                         <a href="menu.html">
@@ -74,7 +91,7 @@
             <nav class="nav">
                 <ul>
                     <li><a href="">Home</a></li>
-                    <li><a href="service.html">Service</a></li>
+                    <li><a href="Service.html">Service</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="order.html">Order</a></li>
                     <li><a href="about.html">About</a></li>
@@ -138,18 +155,19 @@
             <div class="footer-section links">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.hmtl">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="service.html">Services</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Service.html">Services</a></li>
+                    <li><a href="menu.hmtl">Products</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section social">
                 <h4>Follow Us</h4>
                 <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/FEUTechOfficial/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://x.com/i/flow/login?redirect_after_login=%2Ffeutechofficial"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/feutech_official/?hl=en"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -157,6 +175,11 @@
             &copy; 2025 FEU Institute of Techology | All Rights Reserved
         </div>
     </footer>
+    
+    
+    
+    
+    
 
     <script src="script.js"></script>
 </body>
